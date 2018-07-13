@@ -14,6 +14,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
     
     var photoLibrary = [PhotoLibrary]()
     let tintButtonColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
+    var isSelectedCell = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,12 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell
-        cell?.isEditing = true
+        if isSelectedCell {
+            cell?.isEditing = true
+        } else {
+            cell?.deleteViewCellBtn.isHidden = true
+        }
+        isSelectedCell = !isSelectedCell
     }
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
