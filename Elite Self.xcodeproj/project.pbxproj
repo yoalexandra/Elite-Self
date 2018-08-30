@@ -21,6 +21,10 @@
 		C3D50CA32030A53C00EA1056 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D50CA22030A53C00EA1056 /* NoteViewController.swift */; };
 		C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3EBDB9B20659BE800AF0328 /* StarsScene.sks */; };
 		C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBDB9D20659C3000AF0328 /* StarsScene.swift */; };
+		FA54439921387D4500EC938E /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA54439821387D4500EC938E /* ThankView.xib */; };
+		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
+		FA54439D21387EED00EC938E /* AlignUILabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439C21387EED00EC938E /* AlignUILabelText.swift */; };
+		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,13 @@
 		C3D50CA22030A53C00EA1056 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		C3EBDB9B20659BE800AF0328 /* StarsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarsScene.sks; sourceTree = "<group>"; };
 		C3EBDB9D20659C3000AF0328 /* StarsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsScene.swift; sourceTree = "<group>"; };
+		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA54439821387D4500EC938E /* ThankView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankView.xib; sourceTree = "<group>"; };
+		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
+		FA54439C21387EED00EC938E /* AlignUILabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignUILabelText.swift; sourceTree = "<group>"; };
+		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +76,10 @@
 		C3C9D26520A5AA7D00B08031 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
 				C37FDCC720A0F0ED00460325 /* PhotoCell.swift */,
-				C31DF08220B263FB007E640F /* UserNotificationManager.swift */,
+				FA54439A21387E8F00EC938E /* ThankView.swift */,
+				FA54439C21387EED00EC938E /* AlignUILabelText.swift */,
+				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,8 +97,8 @@
 		C3C9D26820A5AB3000B08031 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C3D50C972030A46600EA1056 /* Assets.xcassets */,
 				C3EBDB9B20659BE800AF0328 /* StarsScene.sks */,
+				C3D50C972030A46600EA1056 /* Assets.xcassets */,
 				C3C5E0F9203290E00045B1D5 /* quotes.json */,
 			);
 			path = "Supporting Files";
@@ -112,13 +124,16 @@
 			isa = PBXGroup;
 			children = (
 				C3D50C8D2030A46600EA1056 /* AppDelegate.swift */,
+				C31DF08220B263FB007E640F /* UserNotificationManager.swift */,
 				C3C9D26620A5AA9A00B08031 /* View Controllers */,
 				C3C9D26520A5AA7D00B08031 /* Views */,
 				C3C9D26420A5AA6600B08031 /* Models */,
 				C3C9D26820A5AB3000B08031 /* Supporting Files */,
 				C3D50C912030A46600EA1056 /* Main.storyboard */,
+				FA54439821387D4500EC938E /* ThankView.xib */,
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
+				FA54439E2138816200EC938E /* Localizable.strings */,
 			);
 			path = "Elite Self";
 			sourceTree = "<group>";
@@ -151,10 +166,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = alejandra;
+				ORGANIZATIONNAME = "Divine App";
 				TargetAttributes = {
 					C3D50C892030A46500EA1056 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -166,6 +182,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = C3D50C812030A46500EA1056;
 			productRefGroup = C3D50C8B2030A46500EA1056 /* Products */;
@@ -185,6 +202,8 @@
 				C3C5E0FA203290E00045B1D5 /* quotes.json in Resources */,
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
+				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
+				FA54439921387D4500EC938E /* ThankView.xib in Resources */,
 				C3D50C982030A46600EA1056 /* Assets.xcassets in Resources */,
 				C3D50C932030A46600EA1056 /* Main.storyboard in Resources */,
 			);
@@ -206,6 +225,8 @@
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
+				FA54439D21387EED00EC938E /* AlignUILabelText.swift in Sources */,
+				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +237,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C3D50C922030A46600EA1056 /* Base */,
+				FA5443942138659500EC938E /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -224,8 +246,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C3D50C9A2030A46600EA1056 /* Base */,
+				FA5443952138659500EC938E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA54439E2138816200EC938E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA54439F2138816200EC938E /* Base */,
+				FA5443A12138816800EC938E /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -235,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -294,6 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -347,14 +381,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33J5BMMQ2K;
+				DEVELOPMENT_TEAM = 2QL8JDRMYQ;
 				INFOPLIST_FILE = "Elite Self/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "alejandra.Elite-Self";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -363,14 +397,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33J5BMMQ2K;
+				DEVELOPMENT_TEAM = 2QL8JDRMYQ;
 				INFOPLIST_FILE = "Elite Self/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "alejandra.Elite-Self";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

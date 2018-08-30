@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  Elite Self
+
+  Created by Alexandra Beznosova on 30/08/2018.
+  Copyright © 2018 Divine App. All rights reserved.
+*/
+//=====================
+// Localizible strings:
+//=====================
+// NoteViewController:
+"Manifest your day" = "Делай сегодня";
+// GoalsViewController:
+"Dream bigger" = "Мечтай больше";
+// VisualBoardViewController
+"Visualize often" = "Доска желаний";
+"Delete this picture?" = "Удалить это фото?";
+"Are you sure you want to delete this picture?" = "Вы уверены, что желаете удалить это фото?";
+"Yes" = "Да";
+"No" = "Нет";
+// UserNotification:
+"This words are powerful" = "Слова - сила";
+"Some of them better to be repeated" = "Некоторые лучше повторять :)";
+// Affirmations
+"It's a beautiful day" = "Сегодня перкрасный день";
+"THANK YOU! Thank whatever that's happening for helping me to evolve" = "СПАСИБО! Спасибо всему что происходит в моей жизни и помогает мне расти";
+"The best is yet to come" = "Все лучшее впереди";
+"Amazing things are keeping to happen today" = "Прекрасные вещи продолжают происходить сегодня";
+"Think beautiful thoughts" = "Только красивые мысли сегодня";
+"Be the energy you want to attract" = "Будь той энергией, которую желаешь привлечь";
+"My Life just keeps getting better!" = "Моя жизнь становится лучше каждый день";
+"Breathe through all changes. You're exactly where you should be in your transformation" = "Дыши! Ты там, где должен быть сейчас";
+"Think positive" = "Думай позитивно";
+"Every month of my Life is a period of magnificent transformation" = "Каждый новый месяц - это период восхитительных перемен";
+"My Life is beautiful" = "Моя жизнь прекрасна";
+"Better thoughts, better you today" = "Лучшие мысли, лучший ты";
+"Hold to the vision. Make your visualizations daily habits and they will become physical manifestations" = "Сделай визуализацию твоей ежедневной привычкой и это станет материальным проявлением";
+"This will soon pass" = "Это скоро пройдет";
+"All of nature is friendly to my plans" = "Вселенная дружелюбна к моим планам";
+"I am a Creator of my Life" = "Я творец моей жизни";
+"Make today the best in your Life. Meet it with positive, success and fun!" = "Проживи лучший день сегодня. Встреть его с позитивомб успехом и радостью";
+"Vision. Purpose. Faith. Gratitude. Action." = "Видение. Цель. Вера. Благодарность. Действия";
+"I am Divine Design" = "Я божественный дизайн";
+"Dominate your thoughts. Consciously change your focus to your goals and vision of Life" = "Управляй своими мыслями. Сознательно меняй фокус на цели и видение своей жизни";
+"All is well" = "все хорошо";
+"I'm ready to receive a miracle this week" = "Чудеса случаются каждый день в моей жизни";
+"I choose to focus on greater thoughts that heal me, inspire me and help me transcend any limitations" = "Я выбираю мысли, которые исцеляют меня, вдохновляют меня и помогают мне преодолевать любые ограничения";
+"I'm ready for a new energy, new experiences and new opportunities." = "Я готов(а) к новой энергии, новому опыту, новым возможностям.";
+"I am ready for the Universe to deliver a major blessing in my Life." = "Я готов(а) к хорошим переменам в моей жизни";
+"I expect good news in the next 24hrs" = "Я ожидаю хорошие новости следующие 24 часа";
+"I am focused on exactly what I want" = "Я сосредоточен(а) точно на том, чего я желаю";
+"My mind is now pure, creative and calm" = "Мой разум ясен, креативен и спокоен сегодня";
+"Unique and brilliant ideas are coming into my mind" = "Уникальные идеи всегда приходят мне на ум";
+"The World belongs to you" = "Мир пренадлежит тебе";
+"Train your mind to see positive things in every situation" = "Тренируй себя видеть позитивное в каждой ситуации";
+"Review your goals twice every day in order to be focused achieving them" = "Просматривай список своих целей и планов дважды в день, чтобы сосредоточиться на их достижениях";
+"This is the only time I get to live today. I choose to enjoy it." = "У меня есть время жить только сегодня. Я выбираю наслаждаться им";
+"Be the best version of yourself today" = "Будь лучшей версией себя сегодня";
+"Relax, everything is a part of the whole as one divine plan" = "Спокойно, у Вселенной свой план на исполнение твоих желаний. Верь";
+"Your FEELINGS are your GREATEST TOOL to help you CREATE your LIFE! Your THOUGHTS are the PRIMARY cause of everything! Everything else you see and experience in this World is EFFECT, and that includes your FEELINGS. The CAUSE is always your THOUGHTS! Consciously change your thoughts focus. Think beautiful thought and feel good!" = "Твои ЧУВСТВА - это СИЛЬНЫЙ ИСТРУМЕНТ, который помогает СОЗДОВАТЬ твою ЖИЗНЬ! Твои МЫСЛИ - первичная ПРИЧИНА всего! Все что ты переживаешь в этом Мире - это ЭФФЕКТ,включая твои ЧУВСТВА. ПРИЧИНА - всегда твои МЫСЛИ! Сознательно меняй фокус своих мыслей. Думай красивые мысли и чувствуй себя хорошо!";
+"TODAY: More laughter, Self-motivated, Healing, Lots of love, Miracles" = "Сегодня: больше смеха, самомотивации, оздоровления, больше любви и чудес!";
+"I have a crystal clear mental picture of the things I desire" = "У меня кристально чистая ментальня картина жизни, которую я желаю";
+"I CHOOSE to believe in myself!" = "Я ВЫБИРАЮ верить в себя!";
+"Universe loves You" = "Вселенная любит тебя";
+"My thoughts create my reality. Today I am Joy and Magic" = "Мои мысли создают мою реальность. Сегодня я радость и магия";
+"Be kind and patient to yourself, love yourself and your Life" = "Будь добр(а) и терпелив(а) к себе, люби себя и свою Жизнь";
+"Be present, breathe.." = "Будь сейчас, дыши..";
+"Success comes easy to me" = "Успех приходит ко мне легко";
+"I am in control of my reality!" = "Я контролирую свою реальность!";
+"Be thankful for what did not work out. You are being guided to something greater" = "Будь благодарен(а) за то, что не случилось. Лучшее и великолепное впереди";
+"Your mental health and happiness are priority" = "Твои ментальное здоровье и счастье - это приоритет";
+"I welcome new energy into my Life" = "Я всегда открыт(а) новому в моей Жизни";
+"Today will be a day of good news, good signs and unforseen favor" = "Сегодня день хороших новостей, хороших знаков";
