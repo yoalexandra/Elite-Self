@@ -13,19 +13,29 @@ import os.log
 class VisualBoardViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoLibrary = [PhotoLibrary]()
-    let tintButtonColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
+    
+    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
     var isSelectedCell = true
-   
+    
+    // ======================================
+    // MARK: - Localizable strings properties
+    // ======================================
+    let largeTitleText = NSLocalizedString("Visualize often", comment: "")
+    let alertTitleText = NSLocalizedString("Delete this picture?", comment: "")
+    let alertMessageText = NSLocalizedString("Are you sure you want to delete this picture?", comment: "")
+    let alertComformActionTitle = NSLocalizedString("Yes", comment: "")
+    let alertCancelActionTitle = NSLocalizedString("No", comment: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionViewVC()
-        navigatonBarButtons()
         setNavigationBarLargeTitle()
+        navigatonBarButtons()
+        setupCollectionViewVC()
+        addLongPressGestureRecognizer()
         savedCollectionPhoto()
     }
-    
     func setupCollectionViewVC() {
-        collectionView?.backgroundColor = tintButtonColor
+        collectionView?.backgroundColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
@@ -46,8 +56,49 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         savePhotoCollection()
     }
     func setNavigationBarLargeTitle() {
-        navigationItem.title = "Visualize often"
+        navigationItem.title = largeTitleText
         navigationItem.largeTitleDisplayMode = .always
+        
+    }
+    // MARK: UILongPressGestureRecognizer
+    func addLongPressGestureRecognizer() {
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.receiveLongPress(gestureRecognizer:)))
+        collectionView?.addGestureRecognizer(longPressRecognizer)
+    }
+    //MARK:- Deleting CollectionViewCell with longPressGestureRecognizer
+    @objc func receiveLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        let targetPress = gestureRecognizer.location(in: collectionView)
+        guard let tappedIndexPath = collectionView?.indexPathForItem(at: targetPress), let tappedCell = collectionView?.cellForItem(at: tappedIndexPath) else { return }
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.repeat], animations: {
+            tappedCell.transform = CGAffineTransform(rotationAngle: 0.03)
+            tappedCell.transform = CGAffineTransform(rotationAngle: -0.03)
+        }, completion: nil)
+        deletePhoto(withCell: tappedCell, atIndexPath: tappedIndexPath)
+    }
+    func deletePhoto(withCell cell: UICollectionViewCell, atIndexPath indexPath: IndexPath) {
+        let confirmDeleting = UIAlertController(title: alertTitleText, message: alertMessageText, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: alertComformActionTitle, style: .destructive, handler: { action in
+            self.photoLibrary.remove(at: indexPath.row)
+            self.collectionView?.deleteItems(at: [indexPath])
+            self.savePhotoCollection()
+        })
+        let cancelAction = UIAlertAction(title: alertCancelActionTitle, style: .cancel, handler: { action in
+            UIView.animate(withDuration: 0.01, delay: 0.0, options: [], animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+        })
+        confirmDeleting.addAction(deleteAction)
+        confirmDeleting.addAction(cancelAction)
+        if let popOver = confirmDeleting.popoverPresentationController {
+            popOver.sourceView = cell
+            if let cell = cell as? PhotoCell {
+                let imageFrame = cell.photoView.frame
+                let popOverX = imageFrame.origin.x + imageFrame.size.width / 2
+                let popOverY = imageFrame.origin.y + imageFrame.size.height / 2
+                popOver.sourceRect = CGRect(x: popOverX, y: popOverY, width: 0.0, height: 0.0)
+            }
+        }
+        present(confirmDeleting, animated: true, completion: nil)
     }
     // MARK: - CollectionView
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -62,17 +113,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         }
         let image = photoLibrary[indexPath.item]
         cell.photoView.image = image.image
-        cell.delegate = self
         return cell
-    }
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell
-        if isSelectedCell {
-            cell?.isEditing = true
-        } else {
-            cell?.deleteViewCellBtn.isHidden = true
-        }
-        isSelectedCell = !isSelectedCell
     }
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -80,11 +121,11 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage else { return }
-        let photo = PhotoLibrary(image: image) //, caption: "Your caption") will use it in next update
+        let photo = PhotoLibrary(image: image) //, caption: "Your caption") will use it in next updates
         photoLibrary.append(photo!)
         self.collectionView?.reloadData()
         savePhotoCollection()
@@ -109,26 +150,15 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             photoLibrary += savePhoto
         }
     }
-    
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 } // End class
 
 // MARK: - Extend ViewController, UICollectionViewDelegateFlowLayout
 extension VisualBoardViewController: UICollectionViewDelegateFlowLayout {
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
         return CGSize(width: itemSize, height: itemSize)
-    }
-}
-// MARK: conform delegate PhotoCell protocol
-extension VisualBoardViewController: PhotoCellDelegate {
-    func delete(cell: PhotoCell) {
-        if let indexPath = collectionView?.indexPath(for: cell) {
-            photoLibrary.remove(at: indexPath.item)
-            self.collectionView?.deleteItems(at: [indexPath])
-        }
-        savePhotoCollection()
     }
 }
 

@@ -9,25 +9,29 @@
 import UIKit
 import UserNotifications
 
-class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificationCenterDelegate { 
+class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificationCenterDelegate {
     // MARK: - Outlets prorerties
     @IBOutlet weak var todayPlansTextView: UITextView!
     @IBOutlet weak var thankTextView: UITextView!
     @IBOutlet var thnxView: UIView!
-    @IBOutlet weak var noteDate: UITextField!
+    @IBOutlet weak var noteDate: AlignUILabelText!
     // Properties to save text with UserDefault
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
+    // ====================================
+    // MARK: - Localizable strings property
+    // ====================================
+    let noteDateTitle = NSLocalizedString("Manifest your day", comment: "")
     
-    let tintButtonColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
+    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
     // MARK: - viewDidLoad method
     override func viewDidLoad() {
         super.viewDidLoad()
         self.todayPlansTextView.delegate = self
         shapeThnxView()
-        notesDate()
-        UserNotificationManager.shared.delegate()
-        UserNotificationManager.shared.notifyUser()
+        displayTodayDate()
+        NotifyUserManager.shared.delegate()
+        NotifyUserManager.shared.notifyUser()
         doneKeyboardButton()
         registerNotifToShowTextAboveKeyboard()
     }
@@ -35,12 +39,12 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         super.viewWillAppear(animated)
         loadTextFromUserDefaults()
     }
-    func notesDate() {
+    func displayTodayDate() {
         let dateFormatter = DateFormatter()
         let date = Date()
         dateFormatter.locale = Locale(identifier: "en_EN")
-        dateFormatter.setLocalizedDateFormatFromTemplate("d MMMM yyyy")
-        noteDate.text = "Manifest your day, \(dateFormatter.string(from: date))"
+        dateFormatter.setLocalizedDateFormatFromTemplate("d MM yyyy")
+        noteDate.text = "\(noteDateTitle), \(dateFormatter.string(from: date))"
     }
     func doneKeyboardButton() {
         let toolBar = UIToolbar()
@@ -77,7 +81,6 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     @objc func textAboveKeyboard(notification: Notification) {
         let userInfo = notification.userInfo
         let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -95,18 +98,20 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         defaults.removeObject(forKey: saveTextKey)
         todayPlansTextView.text = " "
     }
+    // MARK: Thank View
     func shapeThnxView() {
-        thnxView.layer.cornerRadius = 20.0
+        //thnxView.layer.cornerRadius = 20.0
         thnxView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
                                         .layerMinXMaxYCorner, .layerMinXMinYCorner]
-        thnxView.clipsToBounds = true
+        //thnxView.clipsToBounds = true
+        thnxView.frame.size = CGSize(width: self.view.frame.width / 1.3, height: self.view.frame.height / 2)
         thnxView.center.x = view.center.x
         thnxView.center.y  = view.center.y - thnxView.bounds.height * 2
         view.addSubview(thnxView)
     }
     func animateAppearanceThankView() {
         UIView.animate(withDuration: 0.4, animations: {
-            self.thnxView.transform = CGAffineTransform(translationX: 0.0, y: self.view.bounds.height / 1.5 + self.thnxView.bounds.size.height / 1.5)
+            self.thnxView.transform = CGAffineTransform(translationX: 0.0, y: self.view.center.y + self.thnxView.bounds.size.height) // 1.3)
         })
     }
     func hideThnxView() {
@@ -133,4 +138,3 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent}
 }
-

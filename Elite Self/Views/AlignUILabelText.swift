@@ -14,7 +14,7 @@ class AlignUILabelText: UILabel {
         if let stringText = text {
             let stringTextAsNSString = stringText as NSString
             let labelStringSize = stringTextAsNSString.boundingRect(with: CGSize(width: self.frame.width,height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil).size
-            super.drawText(in: CGRect(x:0,y: rect.size.height - labelStringSize.height, width: self.frame.width, height: ceil(labelStringSize.height)))
+            super.drawText(in: CGRect(x:0,y: rect.size.height - labelStringSize.height - 10, width: self.frame.width, height: ceil(labelStringSize.height)))
         } else {
             super.drawText(in: rect)
         }

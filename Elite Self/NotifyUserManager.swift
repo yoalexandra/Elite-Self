@@ -1,5 +1,5 @@
 //
-//  UserNotificationManager.swift
+//  NotifyUserManagerr.swift
 //  Elite Self
 //
 //  Created by Alexandra Beznosova on 21/05/2018.

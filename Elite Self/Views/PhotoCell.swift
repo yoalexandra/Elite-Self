@@ -8,26 +8,17 @@
 
 import UIKit
 
-protocol PhotoCellDelegate: class {
-    func delete(cell: PhotoCell)
-}
-
 class PhotoCell: UICollectionViewCell {
-    
-    weak var delegate: PhotoCellDelegate?
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var deleteViewCellBtn: UIVisualEffectView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 6
         containerView.layer.masksToBounds = true
         photoView.contentMode = .scaleAspectFill
-        deleteViewCellBtn.layer.cornerRadius = deleteViewCellBtn.bounds.width / 2.0
-        deleteViewCellBtn.layer.masksToBounds = true
-        deleteViewCellBtn.isHidden = !isEditing
+        
     }
     var photo: PhotoLibrary? {
         didSet {
@@ -36,15 +27,7 @@ class PhotoCell: UICollectionViewCell {
             }
         }
     }
-    var isEditing: Bool = false {
-        didSet {
-            deleteViewCellBtn.isHidden = !isEditing
-        }
-    }
     
-    @IBAction func deleteViewCell(_ sender: UIButton) {
-        delegate?.delete(cell: self)
-    }
 }
 
 

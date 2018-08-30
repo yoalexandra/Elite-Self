@@ -15,7 +15,12 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
     // Property to save text with UserDefault
     let textViewContents = "textView"
     let defaults = UserDefaults.standard
-    let tintButtonColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
+    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
+    
+    // ======================================
+    // MARK: - Localizable strings properties
+    // ======================================
+    let largeTitleText = NSLocalizedString("Dream bigger", comment: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,6 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(true)
         loadTextFromUserDefaults()
     }
-    
     // MARK: - Navigation Bar
     func navigatonBarButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissGVC))
@@ -41,7 +45,7 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     func setupNavigationBar() {
-        navigationItem.title = "Dreams are free"
+        navigationItem.title = largeTitleText
         navigationItem.largeTitleDisplayMode = .always
     }
     func doneKeyboardButton() {
@@ -62,15 +66,12 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
     @objc func doneButtonClicked() {
         view.endEditing(true)
     }
-    
     func saveText() {
         defaults.set(goalsTextView.text, forKey: textViewContents)
     }
-    
     func textViewDidEndEditing(_ textView: UITextView) {
         saveText()
     }
-    
     func loadTextFromUserDefaults() {
         if let textViewContents = defaults.string(forKey: textViewContents) {
             goalsTextView.text = textViewContents
@@ -78,7 +79,7 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
             goalsTextView.becomeFirstResponder()
         }
     }
-    // textView editing mode, make display user input text above keyboard
+    // textView editing mode, make display user text input above keyboard
     func registerNotifToShowTextAboveKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)

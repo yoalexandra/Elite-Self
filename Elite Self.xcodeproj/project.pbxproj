@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AAFE12049F27000912D57 /* GoalsViewController.swift */; };
-		C31DF08320B263FB007E640F /* UserNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DF08220B263FB007E640F /* UserNotificationManager.swift */; };
+		C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DF08220B263FB007E640F /* NotifyUserManager.swift */; };
 		C3319A0D20DDBCB1001A9F28 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */; };
 		C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37143322082753200F5CD96 /* VisualBoardViewController.swift */; };
 		C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37FDCC720A0F0ED00460325 /* PhotoCell.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		C31AAFE12049F27000912D57 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
-		C31DF08220B263FB007E640F /* UserNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
+		C31DF08220B263FB007E640F /* NotifyUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyUserManager.swift; sourceTree = "<group>"; };
 		C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C37143322082753200F5CD96 /* VisualBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBoardViewController.swift; sourceTree = "<group>"; };
 		C37FDCC720A0F0ED00460325 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C3D50C8D2030A46600EA1056 /* AppDelegate.swift */,
-				C31DF08220B263FB007E640F /* UserNotificationManager.swift */,
+				C31DF08220B263FB007E640F /* NotifyUserManager.swift */,
 				C3C9D26620A5AA9A00B08031 /* View Controllers */,
 				C3C9D26520A5AA7D00B08031 /* Views */,
 				C3C9D26420A5AA6600B08031 /* Models */,
@@ -218,7 +218,7 @@
 			files = (
 				C3319A0D20DDBCB1001A9F28 /* NotificationModel.swift in Sources */,
 				C3D50CA32030A53C00EA1056 /* NoteViewController.swift in Sources */,
-				C31DF08320B263FB007E640F /* UserNotificationManager.swift in Sources */,
+				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */,
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
