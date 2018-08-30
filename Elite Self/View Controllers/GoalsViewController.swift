@@ -1,9 +1,9 @@
 //
-//  RandomQuotes.swift
+//  GoalsViewController.swift
 //  Elite Self
 //
-//  Created by Администратор on 02/03/2018.
-//  Copyright © 2018 alejandra. All rights reserved.
+//  Created by Alexandra Beznosova on 02/03/2018.
+//  Copyright © 2018 Divine App. All rights reserved.
 //
 
 import UIKit
@@ -47,9 +47,9 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
     func doneKeyboardButton() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.trash, target: self, action: #selector(self.clearTextView))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneButtonClicked))
+        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
         trashButton.tintColor = tintButtonColor
         doneButton.tintColor = tintButtonColor
         toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
@@ -80,17 +80,17 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
     }
     // textView editing mode, make display user input text above keyboard
     func registerNotifToShowTextAboveKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     @objc func editingTextAboveKeyboard(notification: Notification) {
         let userInfo = notification.userInfo
-        let getKeyboardRect = (userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardFrame = self.view.convert(getKeyboardRect, to: view.window)
-        if notification.name == Notification.Name.UIKeyboardWillHide {
+        if notification.name == UIResponder.keyboardWillHideNotification {
             goalsTextView.contentInset = UIEdgeInsets.zero
         } else {
-            goalsTextView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height, 0.0)
+            goalsTextView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
             goalsTextView.scrollIndicatorInsets = goalsTextView.contentInset
         }
         goalsTextView.scrollRangeToVisible(goalsTextView.selectedRange)

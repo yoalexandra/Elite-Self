@@ -1,9 +1,9 @@
 //
-//  BigGoalsScene.swift
+//  StarsScene.swift
 //  Elite Self
 //
-//  Created by Администратор on 23/03/2018.
-//  Copyright © 2018 alejandra. All rights reserved.
+//  Created by Alexandra on 23/03/2018.
+//  Copyright © 2018 Divine App. All rights reserved.
 //
 
 import SpriteKit

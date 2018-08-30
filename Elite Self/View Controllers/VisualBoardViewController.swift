@@ -2,8 +2,8 @@
 //  VisualBoardViewController.swift
 //  Elite Self
 //
-//  Created by Администратор on 14/04/2018.
-//  Copyright © 2018 alejandra. All rights reserved.
+//  Created by Alexandra Beznosova on 14/04/2018.
+//  Copyright © 2018 Divine App. All rights reserved.
 //
 
 import UIKit
@@ -79,8 +79,11 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         // Dismiss the picker if the user canceled.
         dismiss(animated: true, completion: nil)
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage else { return }
         let photo = PhotoLibrary(image: image) //, caption: "Your caption") will use it in next update
         photoLibrary.append(photo!)
         self.collectionView?.reloadData()
@@ -129,26 +132,12 @@ extension VisualBoardViewController: PhotoCellDelegate {
     }
 }
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
