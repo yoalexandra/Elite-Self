@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Obe-Ta-V0m" customClass="AlignUILabelText" customModule="Elite_Self" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Obe-Ta-V0m" customClass="AlignUILabelText" customModule="Elite_Self" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                 <color key="backgroundColor" red="0.66274509800000003" green="0.80000000000000004" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -87,64 +87,11 @@
                     </view>
                     <connections>
                         <outlet property="noteDate" destination="Obe-Ta-V0m" id="38S-eW-FMu"/>
-                        <outlet property="thankTextView" destination="n6J-Dv-Giq" id="KAT-9b-A1k"/>
-                        <outlet property="thnxView" destination="VJY-Lt-dyd" id="sHP-KE-WSt"/>
-                        <outlet property="todayPlansTextView" destination="KFH-ZO-EEO" id="ccP-zf-Pw7"/>
+                        <outlet property="notesTextView" destination="KFH-ZO-EEO" id="ccP-zf-Pw7"/>
+                        <outlet property="showThankViewButton" destination="a1w-t9-p37" id="SL4-sa-rtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="VJY-Lt-dyd" customClass="ThankView" customModule="Elite_Self" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="245" height="339"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Universe hears you.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tyw-Lf-DH7">
-                            <rect key="frame" x="8" y="0.0" width="230" height="51"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="n6J-Dv-Giq">
-                            <rect key="frame" x="0.0" y="59" width="245" height="200"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le1-j7-HdZ">
-                            <rect key="frame" x="48" y="269" width="150" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <color key="backgroundColor" red="0.12659430429999999" green="0.2777027648" blue="0.39325629340000001" alpha="0.99178617290000004" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <state key="normal" title="Thank">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="25"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="sendThank:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIh-mx-CzO"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.34002849200000002" green="0.51325641479999995" blue="0.64572482639999995" alpha="0.99178617290000004" colorSpace="calibratedRGB"/>
-                    <viewLayoutGuide key="safeArea" id="zF3-HH-Pgk"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                            <color key="value" red="0.12659430429999999" green="0.2777027648" blue="0.39325629340000001" alpha="0.99178617290000004" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                            <color key="value" red="0.66274509800000003" green="0.80000000000000004" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </objects>
             <point key="canvasLocation" x="843.47826086956525" y="26.90217391304348"/>
         </scene>

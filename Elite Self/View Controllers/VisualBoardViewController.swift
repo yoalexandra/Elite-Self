@@ -133,14 +133,16 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
     }
     // MARK: - FileManager saving images
     private func savePhotoCollection() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(photoLibrary, toFile: PhotoLibrary.ArchiveURL.path)
-        if isSuccessfulSave {
+        let url = URL(fileURLWithPath: PhotoLibrary.ArchiveURL.path)
+        do {
+            let data  = try NSKeyedArchiver.archivedData(withRootObject: photoLibrary, requiringSecureCoding: false)
+            try data.write(to: url, options: [.atomic])
             os_log("Photo succseffully saved", log: OSLog.default, type: .debug)
-        } else {
+        } catch {
             os_log("Failed to save photos", log: OSLog.default, type: .error)
         }
     }
-    // Load Images
+    // Load Images // TODO: I hope you will figuring it out how to add do-catch block!
     private func loadPhotoCollection() -> [PhotoLibrary]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
     }

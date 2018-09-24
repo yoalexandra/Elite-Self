@@ -11,10 +11,11 @@ import UserNotifications
 
 class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificationCenterDelegate {
     // MARK: - Outlets prorerties
-    @IBOutlet weak var todayPlansTextView: UITextView!
-    @IBOutlet weak var thankTextView: UITextView!
-    @IBOutlet var thnxView: UIView!
+    @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var noteDate: AlignUILabelText!
+    @IBOutlet weak var thankView: ThankView!
+    @IBOutlet weak var thankTextView: UITextView!
+    @IBOutlet weak var showThankViewButton: UIBarButtonItem!
     // Properties to save text with UserDefault
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
@@ -27,8 +28,7 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
     // MARK: - viewDidLoad method
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.todayPlansTextView.delegate = self
-        shapeThnxView()
+        self.notesTextView.delegate = self
         displayTodayDate()
         NotifyUserManager.shared.delegate()
         NotifyUserManager.shared.notifyUser()
@@ -53,14 +53,13 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
         doneButton.tintColor = tintButtonColor
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
-        thankTextView.inputAccessoryView = toolBar
-        todayPlansTextView.inputAccessoryView = toolBar
+        notesTextView.inputAccessoryView = toolBar
     }
     @objc func doneButtonClicked() {
         view.endEditing(true)
     }
     func saveText() {
-        defaults.set(todayPlansTextView.text, forKey: saveTextKey)
+        defaults.set(notesTextView.text, forKey: saveTextKey)
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         saveText()
@@ -70,12 +69,11 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
     }
     func loadTextFromUserDefaults() {
         if let textViewContents = defaults.string(forKey: saveTextKey) {
-            todayPlansTextView.text = textViewContents
+            notesTextView.text = textViewContents
         } else {
-            todayPlansTextView.becomeFirstResponder()
+            notesTextView.becomeFirstResponder()
         }
     }
-    
     // textView editing mode, make display user text above keyboard
     func registerNotifToShowTextAboveKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
@@ -86,53 +84,42 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardFrame = self.view.convert(getKeyboardRect, to: view.window)
         if notification.name == UIResponder.keyboardWillHideNotification {
-            todayPlansTextView.contentInset = UIEdgeInsets.zero
+            notesTextView.contentInset = UIEdgeInsets.zero
         } else {
-            todayPlansTextView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
-            todayPlansTextView.scrollIndicatorInsets = todayPlansTextView.contentInset
+            notesTextView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+            notesTextView.scrollIndicatorInsets = notesTextView.contentInset
         }
-        todayPlansTextView.scrollRangeToVisible(todayPlansTextView.selectedRange)
+        notesTextView.scrollRangeToVisible(notesTextView.selectedRange)
     }
     
     @IBAction func clearTextView(_ sender: UIBarButtonItem) {
         defaults.removeObject(forKey: saveTextKey)
-        todayPlansTextView.text = " "
+        notesTextView.text = " "
     }
-    // MARK: Thank View
-    func shapeThnxView() {
-        //thnxView.layer.cornerRadius = 20.0
-        thnxView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
-                                        .layerMinXMaxYCorner, .layerMinXMinYCorner]
-        //thnxView.clipsToBounds = true
-        thnxView.frame.size = CGSize(width: self.view.frame.width / 1.3, height: self.view.frame.height / 2)
-        thnxView.center.x = view.center.x
-        thnxView.center.y  = view.center.y - thnxView.bounds.height * 2
-        view.addSubview(thnxView)
+    // Awake ThankView from nib
+    func awakeThankViewFromNib() {
+        let nib = UINib.init(nibName: "ThankView", bundle: nil)
+        nib.instantiate(withOwner: self, options: nil)
+        if let thankView = thankView {
+            thankView.center = view.center
+            view.addSubviewWithFadeAnimation(thankView, duration: 1.2, options: .curveEaseIn)
+        }
     }
-    func animateAppearanceThankView() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.thnxView.transform = CGAffineTransform(translationX: 0.0, y: self.view.center.y + self.thnxView.bounds.size.height) // 1.3)
-        })
-    }
-    func hideThnxView() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.thnxView.transform = CGAffineTransform(translationX: 0.0, y: -800)
-        })
-    }
-    
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
-        animateAppearanceThankView()
+        awakeThankViewFromNib()
+        showThankViewButton.isEnabled = false
         thankTextView.text = ""
     }
-    
-    @IBAction func sendThank(_ sender: Any) {
-        hideThnxView()
+    @IBAction func sendThank(_ sender: UIButton) {
+        thankView?.removeSubviewWithTransform(duration: 0.4)
+        showThankViewButton.isEnabled = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "toGoalsViewController" || segue.identifier == "toVisualBoard" {
-            hideThnxView()
+            thankView?.removeSubviewWhenPerformSegue(duration: 0.1)
+            showThankViewButton.isEnabled = true
         }
     }
     override var prefersStatusBarHidden: Bool { return false }

@@ -21,10 +21,10 @@
 		C3D50CA32030A53C00EA1056 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D50CA22030A53C00EA1056 /* NoteViewController.swift */; };
 		C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3EBDB9B20659BE800AF0328 /* StarsScene.sks */; };
 		C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBDB9D20659C3000AF0328 /* StarsScene.swift */; };
-		FA54439921387D4500EC938E /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA54439821387D4500EC938E /* ThankView.xib */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA54439D21387EED00EC938E /* AlignUILabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439C21387EED00EC938E /* AlignUILabelText.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
+		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +46,12 @@
 		C3EBDB9D20659C3000AF0328 /* StarsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsScene.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		FA54439821387D4500EC938E /* ThankView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankView.xib; sourceTree = "<group>"; };
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
 		FA54439C21387EED00EC938E /* AlignUILabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignUILabelText.swift; sourceTree = "<group>"; };
 		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
+		FA95D3252144316200003F2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThankView.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +131,7 @@
 				C3C9D26420A5AA6600B08031 /* Models */,
 				C3C9D26820A5AB3000B08031 /* Supporting Files */,
 				C3D50C912030A46600EA1056 /* Main.storyboard */,
-				FA54439821387D4500EC938E /* ThankView.xib */,
+				FA95D3232144315C00003F2F /* ThankView.xib */,
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
 				FA54439E2138816200EC938E /* Localizable.strings */,
@@ -203,7 +204,7 @@
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
-				FA54439921387D4500EC938E /* ThankView.xib in Resources */,
+				FA95D3212144315C00003F2F /* ThankView.xib in Resources */,
 				C3D50C982030A46600EA1056 /* Assets.xcassets in Resources */,
 				C3D50C932030A46600EA1056 /* Main.storyboard in Resources */,
 			);
@@ -258,6 +259,15 @@
 				FA5443A12138816800EC938E /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FA95D3232144315C00003F2F /* ThankView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA95D3222144315C00003F2F /* Base */,
+				FA95D3252144316200003F2F /* ru */,
+			);
+			name = ThankView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

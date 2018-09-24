@@ -69,6 +69,11 @@ extension UIView {
             self.removeFromSuperview()
         })
     }
+    func removeSubviewWhenPerformSegue(duration: TimeInterval) {
+        UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
+            self.removeFromSuperview()
+        }, completion: nil)
+    }
 }
 
 extension UIColor {
