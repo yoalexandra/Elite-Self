@@ -27,8 +27,9 @@
 		FA11150521625BF800317111 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150421625BF800317111 /* Coordinator.swift */; };
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
+		FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */; };
+		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
-		FA54439D21387EED00EC938E /* AlignUILabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439C21387EED00EC938E /* AlignUILabelText.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
 /* End PBXBuildFile section */
@@ -56,10 +57,11 @@
 		FA11150421625BF800317111 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
-		FA54439C21387EED00EC938E /* AlignUILabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignUILabelText.swift; sourceTree = "<group>"; };
 		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 			children = (
 				C37FDCC720A0F0ED00460325 /* PhotoCell.swift */,
 				FA54439A21387E8F00EC938E /* ThankView.swift */,
-				FA54439C21387EED00EC938E /* AlignUILabelText.swift */,
 				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
 			);
 			path = Views;
@@ -103,6 +104,8 @@
 				C3D50CA22030A53C00EA1056 /* ViewController.swift */,
 				C31AAFE12049F27000912D57 /* GoalsViewController.swift */,
 				C37143322082753200F5CD96 /* VisualBoardViewController.swift */,
+				FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */,
+				FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
+				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
 				FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */,
 				C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */,
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
@@ -265,8 +269,8 @@
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
-				FA54439D21387EED00EC938E /* AlignUILabelText.swift in Sources */,
 				FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */,
+				FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */,
 				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

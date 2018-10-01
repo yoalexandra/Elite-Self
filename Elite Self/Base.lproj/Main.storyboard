@@ -39,16 +39,28 @@
                                             <action selector="presentGoalsVC:" destination="BYZ-38-t0r" id="WOL-6Z-WDW"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uxk-Vo-qyG"/>
+                                    <barButtonItem title="🌟" id="9Jh-9g-87v">
+                                        <connections>
+                                            <action selector="presentCardsVC:" destination="BYZ-38-t0r" id="GzQ-ml-597"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="z1a-Ja-nls"/>
                                     <barButtonItem title="🙏" id="a1w-t9-p37">
                                         <connections>
                                             <action selector="showThnxView:" destination="BYZ-38-t0r" id="rF0-kF-318"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cSY-HH-fCt"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tZn-OV-1jo"/>
                                     <barButtonItem title="🗑" id="LzK-cN-tqY">
                                         <connections>
                                             <action selector="clearTextView:" destination="BYZ-38-t0r" id="bHN-s5-zOa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cSY-HH-fCt"/>
+                                    <barButtonItem title="⚙️" id="8dx-C5-Dvh">
+                                        <connections>
+                                            <action selector="presentSettingsVC:" destination="BYZ-38-t0r" id="cXe-yr-miu"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -75,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="27"/>
+            <point key="canvasLocation" x="1525" y="-125"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="q3T-a8-aNq">
@@ -109,7 +121,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgp-y1-jlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="756"/>
+            <point key="canvasLocation" x="1080" y="585"/>
+        </scene>
+        <!--Cards Collection View Controller-->
+        <scene sceneID="bRB-Ik-10T">
+            <objects>
+                <collectionViewController storyboardIdentifier="CardsCollectionViewController" id="8U8-3u-SrC" customClass="CardsCollectionViewController" customModule="Elite_Self" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JsR-cL-IIh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fkX-JC-bAd">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardsCell" id="8y8-B0-4vd">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="8U8-3u-SrC" id="dFt-q3-Chw"/>
+                            <outlet property="delegate" destination="8U8-3u-SrC" id="qQs-ID-If9"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ani-Sf-4QY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="585"/>
+        </scene>
+        <!--Settings Table View Controller-->
+        <scene sceneID="FVU-q2-Huf">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingsTableViewController" id="0bj-A4-fP1" customClass="SettingsTableViewController" customModule="Elite_Self" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H1v-xf-Zxp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="dkf-QS-ca4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dkf-QS-ca4" id="ytB-ke-aOG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0bj-A4-fP1" id="3ob-MB-N26"/>
+                            <outlet property="delegate" destination="0bj-A4-fP1" id="LnT-D3-e4a"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9h-d8-tiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2725" y="585"/>
         </scene>
         <!--Visual Board View Controller-->
         <scene sceneID="12m-Z8-T5W">
@@ -172,7 +246,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51n-sJ-F5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="756"/>
+            <point key="canvasLocation" x="233" y="586"/>
         </scene>
     </scenes>
 </document>
