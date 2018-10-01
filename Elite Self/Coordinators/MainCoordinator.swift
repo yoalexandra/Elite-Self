@@ -20,6 +20,7 @@ class MainCoordinator: Coordinator {
         presenter.navigationBar.backgroundColor = .clear
         presenter.navigationBar.prefersLargeTitles = true
         presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor!]
+
     }
     func start() {
         let viewController = ViewController.instantiate()
@@ -38,18 +39,18 @@ class MainCoordinator: Coordinator {
         goalsViewController.coordinator = self
         presenter.pushViewController(goalsViewController, animated: true)
     }
-    // New features
-    /*func cardsVCSubscription() {
+  
+    func cardsVCSubscription() {
         let cardsViewController = CardsCollectionViewController.instantiate()
         cardsViewController.coordinator = self
         cardsViewController.title = "Affirm"
         presenter.pushViewController(cardsViewController, animated: true)
     }
     func settingsVCSubscription() {
-        let settingsViewController = SettingsViewController.instantiate()
+        let settingsViewController = SettingsTableViewController.instantiate()
         settingsViewController.coordinator = self
         settingsViewController.title = "Settings"
         presenter.pushViewController(settingsViewController, animated: true)
-    }*/
+    }
 }
 

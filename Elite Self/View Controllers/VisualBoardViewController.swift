@@ -37,6 +37,9 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
+    func setNavigationBarLargeTitle() {
+        navigationItem.title = largeTitleText
+    }
     func addNavigatonBarButtons() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPhoto))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVB))
@@ -56,17 +59,12 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         //coordinator?.start()
         _ = navigationController?.popToRootViewController(animated: true)
     }
-    func setNavigationBarLargeTitle() {
-        navigationItem.title = largeTitleText
-        navigationItem.largeTitleDisplayMode = .always
-        
-    }
-    // MARK: UILongPressGestureRecognizer
+    // MARK: - UILongPressGestureRecognizer
     func addLongPressGestureRecognizer() {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.receiveLongPress(gestureRecognizer:)))
         collectionView?.addGestureRecognizer(longPressRecognizer)
     }
-    //MARK:- Deleting CollectionViewCell with longPressGestureRecognizer
+    //MARK: - Deleting CollectionViewCell with longPressGestureRecognizer
     @objc func receiveLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
         let targetPress = gestureRecognizer.location(in: collectionView)
         guard let tappedIndexPath = collectionView?.indexPathForItem(at: targetPress), let tappedCell = collectionView?.cellForItem(at: tappedIndexPath) else { return }
@@ -143,9 +141,10 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
             os_log("Failed to save photos", log: OSLog.default, type: .error)
         }
     }
-    // Load Images // TODO:  add do-catch block!
+    // Load Photos // TODO:  add do-catch block!
     private func loadPhotoCollection() -> [PhotoLibrary]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
+       
     }
     // Load any saved photos
     func savedCollectionPhoto() {

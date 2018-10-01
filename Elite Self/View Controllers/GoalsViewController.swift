@@ -37,7 +37,6 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
     // MARK: - Navigation Bar
     func setupNavigationBar() {
         navigationItem.title = largeTitleText
-        navigationItem.largeTitleDisplayMode = .always
     }
     func addNavigatonBarButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissGVC))

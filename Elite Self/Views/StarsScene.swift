@@ -11,7 +11,6 @@ import SpriteKit
 class StarsScene: SKScene {
     
     var stars: SKEmitterNode!
-    
     var bgColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
     
     override func didMove(to view: SKView) {
