@@ -20,21 +20,17 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     // Properties to save text with UserDefaults
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
-    
+  
     var dateLabel = UILabel()
-    var backBtn = UIButton()
-    var nextBtn = UIButton()
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
-    let buttonActionBackText = NSLocalizedString("Back", comment: "")
-    let buttonActionNextText = NSLocalizedString("Next", comment: "")
+    
     // MARK: - viewDidLoad method in case you lost lol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notesTextView.delegate = self
         setupNavigationBar()
         displayTodayDate()
-        addActionsNavigarionBarButtons()
         NotifyUserManager.shared.delegate()
         NotifyUserManager.shared.notifyUser()
         doneKeyboardButton()
@@ -44,51 +40,21 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         super.viewWillAppear(animated)
         loadTextFromUserDefaults()
     }
-
-    // MARK: - Navigation bar, design navigation bar
+    // MARK: - Navigation bar
     func setupNavigationBar() {
         navigationItem.title = largeTitleText
-        navigationItem.largeTitleDisplayMode = .always
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.leftBarButtonItem?.tintColor = customTintColor
-        navigationItem.rightBarButtonItem?.tintColor = customTintColor
-        let btnFrame = CGRect(x: 0.0, y: 0.0, width: 30, height: 30)
-        backBtn.frame = btnFrame
-        nextBtn.frame = btnFrame
-        backBtn.setTitle(buttonActionBackText, for: .normal)
-        backBtn.setTitleColor(customTintColor, for: .normal)
-        nextBtn.setTitle(buttonActionNextText, for: .normal)
-        nextBtn.setTitleColor(customTintColor, for: .normal)
-        dateLabel.textColor = customTintColor
-        dateLabel.font = UIFont(name: "Helvetica", size: 20)
         
-        let stackView = UIStackView(arrangedSubviews: [backBtn, dateLabel, nextBtn])
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        navigationItem.titleView = stackView
-        /* let searchBar = UISearchBar()
-         searchBar.sizeToFit()
-         searchBar.placeholder = "Find date"
-         self.navigationController?.navigationItem.titleView = searchBar*/
+        dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
+        dateLabel.textColor = customTintColor
+        dateLabel.textAlignment = .center
+        dateLabel.font = UIFont(name: "Helvetica", size: 18)
+        navigationItem.titleView = dateLabel
+
     }
-    // Navigation Bar buttons actions
-    func addActionsNavigarionBarButtons() {
-        backBtn.addTarget(self, action: #selector(previousDate), for: .touchUpInside)
-        nextBtn.addTarget(self, action: #selector(nextDate), for: .touchUpInside)
-    }
-    // Get previous day
-    @objc func previousDate(sender: UIButton!) {
-        date = date.getPreviousDay()!
-        formatDate(date, textLabel: dateLabel)
-    }
-    // Get next day
-    @objc func nextDate(sender: UIButton!) {
-        date = date.getNextDay()!
-        formatDate(date, textLabel: dateLabel)
-    }
+  
     func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
     
     func doneKeyboardButton() {
@@ -136,14 +102,13 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         }
         notesTextView.scrollRangeToVisible(notesTextView.selectedRange)
     }
-    
     // Awake ThankView from nib
     func awakeThankViewFromNib() {
         let nib = UINib.init(nibName: "ThankView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
         if let thankView = thankView {
             thankView.center = view.center
-            view.addSubviewWithFadeAnimation(thankView, duration: 1.2, options: .curveEaseIn)
+            view.addSubviewWithFadeAnimation(thankView, duration: 1.0, options: .curveEaseIn)
         }
     }
     
@@ -158,6 +123,15 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     @IBAction func presentGoalsVC(_ sender: UIBarButtonItem) {
         coordinator?.goasVClSubscription()
     }
+    
+    @IBAction func presentCardsVC(_ sender: UIBarButtonItem) {
+        coordinator?.cardsVCSubscription()
+    }
+    
+    @IBAction func presentSettingsVC(_ sender: UIBarButtonItem) {
+        coordinator?.settingsVCSubscription()
+    }
+    
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
         awakeThankViewFromNib()
         showThankViewButton.isEnabled = false

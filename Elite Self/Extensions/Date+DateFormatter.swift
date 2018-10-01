@@ -23,6 +23,6 @@ extension Date {
 func formatDate(_ date: Date, textLabel: UILabel) {
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_EN")
-    dateFormatter.setLocalizedDateFormatFromTemplate("d MM yy")
+    dateFormatter.setLocalizedDateFormatFromTemplate("d MMMM yyyy")
     textLabel.text = "\(dateFormatter.string(from: date))"
 }
