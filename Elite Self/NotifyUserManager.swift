@@ -17,9 +17,7 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
     // The initial user notification time
     let defhour = 10
     let defmin = 30
-    // ===============================================
     // MARK: - Localizable strings properties
-    // ===============================================
     let notifTitle = NSLocalizedString("This words are powerful", comment: "")
     let notifSubtitle = NSLocalizedString("Some of them better to be repeated", comment: "")
     // MARK: - Register UserNotifications

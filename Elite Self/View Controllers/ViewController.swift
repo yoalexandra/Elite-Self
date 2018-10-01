@@ -1,5 +1,5 @@
 //
-//  NoteViewController.swift
+//  ViewController.swift
 //  Elite Self
 //
 //  Created by Alexandra Beznosova on 11/02/2018.
@@ -9,27 +9,32 @@
 import UIKit
 import UserNotifications
 
-class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificationCenterDelegate {
+class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
+    
+    weak var coordinator: MainCoordinator?
     // MARK: - Outlets prorerties
     @IBOutlet weak var notesTextView: UITextView!
-    @IBOutlet weak var noteDate: AlignUILabelText!
     @IBOutlet weak var thankView: ThankView!
     @IBOutlet weak var thankTextView: UITextView!
     @IBOutlet weak var showThankViewButton: UIBarButtonItem!
-    // Properties to save text with UserDefault
+    // Properties to save text with UserDefaults
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
-    // ====================================
-    // MARK: - Localizable strings property
-    // ====================================
-    let noteDateTitle = NSLocalizedString("Manifest your day", comment: "")
     
-    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
-    // MARK: - viewDidLoad method
+    var dateLabel = UILabel()
+    var backBtn = UIButton()
+    var nextBtn = UIButton()
+    // MARK: - Localizable strings properties
+    let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
+    let buttonActionBackText = NSLocalizedString("Back", comment: "")
+    let buttonActionNextText = NSLocalizedString("Next", comment: "")
+    // MARK: - viewDidLoad method in case you lost lol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notesTextView.delegate = self
+        setupNavigationBar()
         displayTodayDate()
+        addActionsNavigarionBarButtons()
         NotifyUserManager.shared.delegate()
         NotifyUserManager.shared.notifyUser()
         doneKeyboardButton()
@@ -39,19 +44,59 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         super.viewWillAppear(animated)
         loadTextFromUserDefaults()
     }
-    func displayTodayDate() {
-        let dateFormatter = DateFormatter()
-        let date = Date()
-        dateFormatter.locale = Locale(identifier: "en_EN")
-        dateFormatter.setLocalizedDateFormatFromTemplate("d MM yyyy")
-        noteDate.text = "\(noteDateTitle), \(dateFormatter.string(from: date))"
+
+    // MARK: - Navigation bar, design navigation bar
+    func setupNavigationBar() {
+        navigationItem.title = largeTitleText
+        navigationItem.largeTitleDisplayMode = .always
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.leftBarButtonItem?.tintColor = customTintColor
+        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+        let btnFrame = CGRect(x: 0.0, y: 0.0, width: 30, height: 30)
+        backBtn.frame = btnFrame
+        nextBtn.frame = btnFrame
+        backBtn.setTitle(buttonActionBackText, for: .normal)
+        backBtn.setTitleColor(customTintColor, for: .normal)
+        nextBtn.setTitle(buttonActionNextText, for: .normal)
+        nextBtn.setTitleColor(customTintColor, for: .normal)
+        dateLabel.textColor = customTintColor
+        dateLabel.font = UIFont(name: "Helvetica", size: 20)
+        
+        let stackView = UIStackView(arrangedSubviews: [backBtn, dateLabel, nextBtn])
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        navigationItem.titleView = stackView
+        /* let searchBar = UISearchBar()
+         searchBar.sizeToFit()
+         searchBar.placeholder = "Find date"
+         self.navigationController?.navigationItem.titleView = searchBar*/
     }
+    // Navigation Bar buttons actions
+    func addActionsNavigarionBarButtons() {
+        backBtn.addTarget(self, action: #selector(previousDate), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(nextDate), for: .touchUpInside)
+    }
+    // Get previous day
+    @objc func previousDate(sender: UIButton!) {
+        date = date.getPreviousDay()!
+        formatDate(date, textLabel: dateLabel)
+    }
+    // Get next day
+    @objc func nextDate(sender: UIButton!) {
+        date = date.getNextDay()!
+        formatDate(date, textLabel: dateLabel)
+    }
+    func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
+    
     func doneKeyboardButton() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
-        doneButton.tintColor = tintButtonColor
+        doneButton.tintColor = customTintColor
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         notesTextView.inputAccessoryView = toolBar
     }
@@ -74,7 +119,7 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
             notesTextView.becomeFirstResponder()
         }
     }
-    // textView editing mode, make display user text above keyboard
+    // TextView editing mode, make display user text above keyboard
     func registerNotifToShowTextAboveKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -92,10 +137,6 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
         notesTextView.scrollRangeToVisible(notesTextView.selectedRange)
     }
     
-    @IBAction func clearTextView(_ sender: UIBarButtonItem) {
-        defaults.removeObject(forKey: saveTextKey)
-        notesTextView.text = " "
-    }
     // Awake ThankView from nib
     func awakeThankViewFromNib() {
         let nib = UINib.init(nibName: "ThankView", bundle: nil)
@@ -105,6 +146,18 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
             view.addSubviewWithFadeAnimation(thankView, duration: 1.2, options: .curveEaseIn)
         }
     }
+    
+    // @IBActions
+    @IBAction func clearTextView(_ sender: UIBarButtonItem) {
+        defaults.removeObject(forKey: saveTextKey)
+        notesTextView.text = " "
+    }
+    @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
+        coordinator?.visualBoardSubscription()
+    }
+    @IBAction func presentGoalsVC(_ sender: UIBarButtonItem) {
+        coordinator?.goasVClSubscription()
+    }
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
         awakeThankViewFromNib()
         showThankViewButton.isEnabled = false
@@ -113,14 +166,6 @@ class NoteViewController: UIViewController, UITextViewDelegate, UNUserNotificati
     @IBAction func sendThank(_ sender: UIButton) {
         thankView?.removeSubviewWithTransform(duration: 0.4)
         showThankViewButton.isEnabled = true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        if segue.identifier == "toGoalsViewController" || segue.identifier == "toVisualBoard" {
-            thankView?.removeSubviewWhenPerformSegue(duration: 0.1)
-            showThankViewButton.isEnabled = true
-        }
     }
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent}

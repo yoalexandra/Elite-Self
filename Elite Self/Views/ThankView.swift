@@ -53,45 +53,5 @@ class ThankView: UIView {
     }
 }
 
-extension UIView {
-    func addSubviewWithFadeAnimation(_ view: UIView, duration: TimeInterval, options: UIView.AnimationOptions) {
-        view.alpha = 0.0
-        addSubview(view)
-        UIView.animate(withDuration: duration, delay: 0.0, options: options, animations: {
-            view.alpha = 1.0
-        }, completion: nil)
-    }
-    func removeSubviewWithTransform(duration: TimeInterval) {
-        UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
-            //self.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-            self.transform = CGAffineTransform(translationX: 0.0, y: -800)
-        }, completion: { _ in
-            self.removeFromSuperview()
-        })
-    }
-    func removeSubviewWhenPerformSegue(duration: TimeInterval) {
-        UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
-            self.removeFromSuperview()
-        }, completion: nil)
-    }
-}
 
-extension UIColor {
-    convenience init? (hexValue: String, alpha: CGFloat) {
-        if hexValue.hasPrefix("#") {
-            let scan = Scanner(string: hexValue)
-            scan.scanLocation = 1
-            var hexInt32: UInt32 = 0
-            if hexValue.count == 7 {
-                if scan.scanHexInt32(&hexInt32) {
-                    let red = CGFloat((hexInt32 & 0xFF0000) >> 16) / 255
-                    let green = CGFloat((hexInt32 & 0x00FF00) >> 8) / 255
-                    let blue = CGFloat(hexInt32 & 0x0000FF) / 255
-                    self.init(red: red, green: green, blue: blue, alpha: alpha)
-                    return
-                }
-            }
-        }
-        return nil
-    }
-}
+

@@ -10,16 +10,14 @@ import UIKit
 import AVFoundation
 import os.log
 
-class VisualBoardViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    weak var coordinator: MainCoordinator?
     
     var photoLibrary = [PhotoLibrary]()
-    
-    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
     var isSelectedCell = true
-    
-    // ======================================
+   
     // MARK: - Localizable strings properties
-    // ======================================
     let largeTitleText = NSLocalizedString("Visualize often", comment: "")
     let alertTitleText = NSLocalizedString("Delete this picture?", comment: "")
     let alertMessageText = NSLocalizedString("Are you sure you want to delete this picture?", comment: "")
@@ -29,7 +27,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarLargeTitle()
-        navigatonBarButtons()
+        addNavigatonBarButtons()
         setupCollectionViewVC()
         addLongPressGestureRecognizer()
         savedCollectionPhoto()
@@ -39,11 +37,12 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
-    func navigatonBarButtons() {
+    func addNavigatonBarButtons() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPhoto))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVB))
-        navigationItem.rightBarButtonItem?.tintColor = tintButtonColor
-        navigationItem.leftBarButtonItem?.tintColor = tintButtonColor
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.leftBarButtonItem?.tintColor = customTintColor
+        navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func addNewPhoto() {
         let picker = UIImagePickerController()
@@ -52,8 +51,10 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         present(picker, animated: true)
     }
     @objc func dismissVB() {
-        dismiss(animated: true, completion: nil)
         savePhotoCollection()
+        // TODO: Custom transition
+        //coordinator?.start()
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     func setNavigationBarLargeTitle() {
         navigationItem.title = largeTitleText
@@ -125,7 +126,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage else { return }
-        let photo = PhotoLibrary(image: image) //, caption: "Your caption") will use it in next updates
+        let photo = PhotoLibrary(image: image)
         photoLibrary.append(photo!)
         self.collectionView?.reloadData()
         savePhotoCollection()
@@ -142,7 +143,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
             os_log("Failed to save photos", log: OSLog.default, type: .error)
         }
     }
-    // Load Images // TODO: I hope you will figuring it out how to add do-catch block!
+    // Load Images // TODO:  add do-catch block!
     private func loadPhotoCollection() -> [PhotoLibrary]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
     }
@@ -156,7 +157,7 @@ class VisualBoardViewController: UICollectionViewController, UIImagePickerContro
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 } // End class
 
-// MARK: - Extend ViewController, UICollectionViewDelegateFlowLayout
+// MARK: -  UICollectionViewDelegateFlowLayout
 extension VisualBoardViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
