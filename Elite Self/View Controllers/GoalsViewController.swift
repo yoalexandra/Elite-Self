@@ -9,23 +9,21 @@
 import UIKit
 import SpriteKit
 
-class GoalsViewController: UIViewController, UITextViewDelegate {
+class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
+    
+    weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var goalsTextView: UITextView!
-    // Property to save text with UserDefault
+    // Property to save text with UserDefaults
     let textViewContents = "textView"
     let defaults = UserDefaults.standard
-    let tintButtonColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
-    
-    // ======================================
     // MARK: - Localizable strings properties
-    // ======================================
     let largeTitleText = NSLocalizedString("Dream bigger", comment: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.goalsTextView.delegate = self
-        navigatonBarButtons()
+        addNavigatonBarButtons()
         setupNavigationBar()
         doneKeyboardButton()
         registerNotifToShowTextAboveKeyboard()
@@ -37,25 +35,29 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
         loadTextFromUserDefaults()
     }
     // MARK: - Navigation Bar
-    func navigatonBarButtons() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissGVC))
-        navigationItem.rightBarButtonItem?.tintColor = tintButtonColor
-    }
-    @objc func dismissGVC() {
-        dismiss(animated: true, completion: nil)
-    }
     func setupNavigationBar() {
         navigationItem.title = largeTitleText
         navigationItem.largeTitleDisplayMode = .always
     }
+    func addNavigatonBarButtons() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissGVC))
+        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    @objc func dismissGVC() {
+        // TODO: Custom transition
+        _ = navigationController?.popToRootViewController(animated: true)
+        //coordinator?.start() this or that 👆🏻 ???
+    }
+ 
     func doneKeyboardButton() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
-        trashButton.tintColor = tintButtonColor
-        doneButton.tintColor = tintButtonColor
+        trashButton.tintColor = customTintColor
+        doneButton.tintColor = customTintColor
         toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
         goalsTextView.inputAccessoryView = toolBar
     }
@@ -79,7 +81,7 @@ class GoalsViewController: UIViewController, UITextViewDelegate {
             goalsTextView.becomeFirstResponder()
         }
     }
-    // textView editing mode, make display user text input above keyboard
+    // TextView editing mode, make display user text input above keyboard
     func registerNotifToShowTextAboveKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -29,17 +29,3 @@ class PhotoCell: UICollectionViewCell {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
