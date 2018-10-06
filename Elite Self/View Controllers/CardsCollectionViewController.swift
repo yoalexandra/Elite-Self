@@ -19,7 +19,7 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
 
     
     // MARK: - Navigation bar
-
+   //   coordinator?.presenter.popToRootViewController(animated: true)
 
     // MARK: UICollectionViewDataSource
 

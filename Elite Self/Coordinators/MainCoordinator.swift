@@ -19,6 +19,7 @@ class MainCoordinator: Coordinator {
         presenter.navigationBar.shadowImage = UIImage()
         presenter.navigationBar.backgroundColor = .clear
         presenter.navigationBar.prefersLargeTitles = true
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor!]
 
     }

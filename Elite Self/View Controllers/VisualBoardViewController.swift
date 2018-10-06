@@ -56,8 +56,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     @objc func dismissVB() {
         savePhotoCollection()
         // TODO: Custom transition
-        //coordinator?.start()
-        _ = navigationController?.popToRootViewController(animated: true)
+          coordinator?.presenter.popToRootViewController(animated: true)
     }
     // MARK: - UILongPressGestureRecognizer
     func addLongPressGestureRecognizer() {

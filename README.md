@@ -1,5 +1,5 @@
 # Elite-Self
-Because of I wanted to build this application I started to learn iOS development. And still learning it while building that App!
+Because of I wanted to build this application I started to learn iOS development.
 # What it is about
 
 I am developing this application  to help people make dream come true and  retrain the way they think and to think more positive things.Create good mind habits.
@@ -14,4 +14,4 @@ Here everything to change life for the better:
 Hold a Vision. Have Faith. Act. Grow!
 That’s what “Elite Self” is about
 
-P.S. More features is coming ...:)
+P.S. More features are coming ...:)
