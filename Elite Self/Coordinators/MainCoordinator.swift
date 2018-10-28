@@ -19,6 +19,7 @@ class MainCoordinator: Coordinator {
         presenter.navigationBar.shadowImage = UIImage()
         presenter.navigationBar.backgroundColor = .clear
         presenter.navigationBar.prefersLargeTitles = true
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  customTintColor!]
         presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor!]
 
     }
@@ -51,6 +52,12 @@ class MainCoordinator: Coordinator {
         settingsViewController.coordinator = self
         settingsViewController.title = "Settings"
         presenter.pushViewController(settingsViewController, animated: true)
+    }
+    func ppVCSubscription() {
+        let ppViewController = PrivacyViewController.instantiate()
+        ppViewController.coordinator = self
+        ppViewController.title = "Privacy Policy"
+        presenter.pushViewController(ppViewController , animated: true)
     }
 }
 

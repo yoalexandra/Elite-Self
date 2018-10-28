@@ -45,8 +45,7 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
     }
     @objc func dismissGVC() {
         // TODO: Custom transition
-        _ = navigationController?.popToRootViewController(animated: true)
-        //coordinator?.start() this or that 👆🏻 ???
+        coordinator?.presenter.popToRootViewController(animated: true)
     }
  
     func doneKeyboardButton() {

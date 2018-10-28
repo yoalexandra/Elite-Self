@@ -45,6 +45,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         navigationItem.title = largeTitleText
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = customTintColor
         navigationItem.setHidesBackButton(true, animated: false)
         
         dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
@@ -112,11 +113,12 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         }
     }
     
-    // @IBActions
+    // MARK: - @IBActions
     @IBAction func clearTextView(_ sender: UIBarButtonItem) {
         defaults.removeObject(forKey: saveTextKey)
         notesTextView.text = " "
     }
+    // ViewControllers navigation
     @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
         coordinator?.visualBoardSubscription()
     }
@@ -131,7 +133,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     @IBAction func presentSettingsVC(_ sender: UIBarButtonItem) {
         coordinator?.settingsVCSubscription()
     }
-    
+    // ThankView events
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
         awakeThankViewFromNib()
         showThankViewButton.isEnabled = false
@@ -141,6 +143,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         thankView?.removeSubviewWithTransform(duration: 0.4)
         showThankViewButton.isEnabled = true
     }
+    
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent}
 }
