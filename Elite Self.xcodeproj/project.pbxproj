@@ -32,6 +32,15 @@
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
+		FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCEA2185990C003A8127 /* privacy_policy.html */; };
+		FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */; };
+		FAE6CCF121859CF3003A8127 /* ManageNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */; };
+		FAE6CCF321859D2D003A8127 /* ManageNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */; };
+		FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */; };
+		FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */; };
+		FAE6CCF921859F21003A8127 /* NewAffirmationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */; };
+		FAE6CCFB21859F3E003A8127 /* NewAffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */; };
+		FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +75,15 @@
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
 		FA95D3252144316200003F2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThankView.strings; sourceTree = "<group>"; };
+		FAE6CCEA2185990C003A8127 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
+		FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageNotificationCell.xib; sourceTree = "<group>"; };
+		FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageNotificationCell.swift; sourceTree = "<group>"; };
+		FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyCell.swift; sourceTree = "<group>"; };
+		FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyCell.xib; sourceTree = "<group>"; };
+		FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAffirmationViewCell.xib; sourceTree = "<group>"; };
+		FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAffirmationViewCell.swift; sourceTree = "<group>"; };
+		FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +109,8 @@
 		C3C9D26520A5AA7D00B08031 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C37FDCC720A0F0ED00460325 /* PhotoCell.swift */,
+				FAE6CCEC21859960003A8127 /* TableViewCells */,
+				FAE6CD002185A337003A8127 /* CollectionViewCells */,
 				FA54439A21387E8F00EC938E /* ThankView.swift */,
 				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
 			);
@@ -105,7 +124,7 @@
 				C31AAFE12049F27000912D57 /* GoalsViewController.swift */,
 				C37143322082753200F5CD96 /* VisualBoardViewController.swift */,
 				FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */,
-				FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */,
+				FAE6CCED21859971003A8127 /* Settings */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -113,6 +132,7 @@
 		C3C9D26820A5AB3000B08031 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAE6CCEA2185990C003A8127 /* privacy_policy.html */,
 				C3EBDB9B20659BE800AF0328 /* StarsScene.sks */,
 				C3D50C972030A46600EA1056 /* Assets.xcassets */,
 				C3C5E0F9203290E00045B1D5 /* quotes.json */,
@@ -176,6 +196,37 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		FAE6CCEC21859960003A8127 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */,
+				FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */,
+				FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */,
+				FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */,
+				FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */,
+				FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FAE6CCED21859971003A8127 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */,
+				FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FAE6CD002185A337003A8127 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C37FDCC720A0F0ED00460325 /* PhotoCell.swift */,
+				FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,10 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */,
 				C3C5E0FA203290E00045B1D5 /* quotes.json in Resources */,
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
+				FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
+				FAE6CCF921859F21003A8127 /* NewAffirmationViewCell.xib in Resources */,
+				FAE6CCF121859CF3003A8127 /* ManageNotificationCell.xib in Resources */,
 				FA95D3212144315C00003F2F /* ThankView.xib in Resources */,
 				C3D50C982030A46600EA1056 /* Assets.xcassets in Resources */,
 				C3D50C932030A46600EA1056 /* Main.storyboard in Resources */,
@@ -258,6 +313,8 @@
 				C3319A0D20DDBCB1001A9F28 /* NotificationModel.swift in Sources */,
 				C3D50CA32030A53C00EA1056 /* ViewController.swift in Sources */,
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
+				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
+				FAE6CCFB21859F3E003A8127 /* NewAffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
@@ -266,12 +323,15 @@
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
+				FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
+				FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
 				FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */,
 				FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */,
 				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
+				FAE6CCF321859D2D003A8127 /* ManageNotificationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -130,21 +130,40 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JsR-cL-IIh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.51372549020000002" blue="0.64705882349999999" alpha="0.99178617290000004" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fkX-JC-bAd">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="406" height="118"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardsCell" id="8y8-B0-4vd">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="affirmationCell" id="8y8-B0-4vd" customClass="AffirmationViewCell" customModule="Elite_Self" customModuleProvider="target">
+                                <rect key="frame" x="4" y="0.0" width="406" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="406" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="IvX-AY-81Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="406" height="118"/>
+                                            <color key="backgroundColor" red="0.77647058820000003" green="0.85490196080000003" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="118" id="1pn-QP-c1t"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="IvX-AY-81Q" firstAttribute="top" secondItem="8y8-B0-4vd" secondAttribute="top" id="5f3-rb-pC6"/>
+                                    <constraint firstAttribute="trailing" secondItem="IvX-AY-81Q" secondAttribute="trailing" id="QOD-sx-n7W"/>
+                                    <constraint firstItem="IvX-AY-81Q" firstAttribute="leading" secondItem="8y8-B0-4vd" secondAttribute="leading" id="gTh-5n-Tot"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="affirmationViewText" destination="IvX-AY-81Q" id="OP7-V5-xUh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -155,7 +174,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ani-Sf-4QY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="585"/>
+            <point key="canvasLocation" x="1886.9565217391305" y="584.51086956521749"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="FVU-q2-Huf">
@@ -184,6 +203,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9h-d8-tiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2725" y="585"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="aDd-2o-B6r">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyViewController" id="azA-FF-NQj" customClass="PrivacyViewController" customModule="Elite_Self" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n94-Y7-0hT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEb-Tn-VX3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qEb-Tn-VX3" firstAttribute="trailing" secondItem="n94-Y7-0hT" secondAttribute="trailing" id="Caq-ib-uQ8"/>
+                            <constraint firstItem="qEb-Tn-VX3" firstAttribute="bottom" secondItem="n94-Y7-0hT" secondAttribute="bottom" id="DJN-R7-hq5"/>
+                            <constraint firstItem="qEb-Tn-VX3" firstAttribute="leading" secondItem="n94-Y7-0hT" secondAttribute="leading" id="DJm-gd-sN9"/>
+                            <constraint firstItem="qEb-Tn-VX3" firstAttribute="top" secondItem="n94-Y7-0hT" secondAttribute="top" id="PZy-6b-45C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9La-ax-zus"/>
+                    </view>
+                    <connections>
+                        <outlet property="privacyWebView" destination="qEb-Tn-VX3" id="z6a-AE-4re"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLD-Au-sc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3537.68115942029" y="578.804347826087"/>
         </scene>
         <!--Visual Board View Controller-->
         <scene sceneID="12m-Z8-T5W">
