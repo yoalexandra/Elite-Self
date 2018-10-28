@@ -33,7 +33,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         savedCollectionPhoto()
     }
     func setupCollectionViewVC() {
-        collectionView?.backgroundColor = UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
+         collectionView?.backgroundColor = UIColor.init(hexValue: "#C6DAE4", alpha: 1.0)//UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
