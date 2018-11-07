@@ -46,3 +46,4 @@ class PrivacyViewController: UIViewController, StoryboardedVCs  {
         }
     }
 }
+

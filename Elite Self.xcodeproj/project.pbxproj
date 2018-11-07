@@ -38,8 +38,6 @@
 		FAE6CCF321859D2D003A8127 /* ManageNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */; };
 		FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */; };
 		FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */; };
-		FAE6CCF921859F21003A8127 /* NewAffirmationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */; };
-		FAE6CCFB21859F3E003A8127 /* NewAffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */; };
 		FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +79,6 @@
 		FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageNotificationCell.swift; sourceTree = "<group>"; };
 		FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyCell.swift; sourceTree = "<group>"; };
 		FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyCell.xib; sourceTree = "<group>"; };
-		FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAffirmationViewCell.xib; sourceTree = "<group>"; };
-		FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAffirmationViewCell.swift; sourceTree = "<group>"; };
 		FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,8 +199,6 @@
 				FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */,
 				FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */,
 				FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */,
-				FAE6CCFA21859F3E003A8127 /* NewAffirmationViewCell.swift */,
-				FAE6CCF821859F21003A8127 /* NewAffirmationViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -294,7 +288,6 @@
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
 				FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
-				FAE6CCF921859F21003A8127 /* NewAffirmationViewCell.xib in Resources */,
 				FAE6CCF121859CF3003A8127 /* ManageNotificationCell.xib in Resources */,
 				FA95D3212144315C00003F2F /* ThankView.xib in Resources */,
 				C3D50C982030A46600EA1056 /* Assets.xcassets in Resources */,
@@ -314,7 +307,6 @@
 				C3D50CA32030A53C00EA1056 /* ViewController.swift in Sources */,
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
-				FAE6CCFB21859F3E003A8127 /* NewAffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
