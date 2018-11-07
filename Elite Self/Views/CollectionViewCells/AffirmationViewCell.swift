@@ -14,7 +14,6 @@ class AffirmationViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         contentView.layer.cornerRadius = 10.0
         contentView.clipsToBounds = true
     }

@@ -15,7 +15,6 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     // MARK: - Outlets prorerties
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var thankView: ThankView!
-    @IBOutlet weak var thankTextView: UITextView!
     @IBOutlet weak var showThankViewButton: UIBarButtonItem!
     // Properties to save text with UserDefaults
     let saveTextKey = "textViewContent"
@@ -110,6 +109,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         if let thankView = thankView {
             thankView.center = view.center
             view.addSubviewWithFadeAnimation(thankView, duration: 1.0, options: .curveEaseIn)
+            thankView.addDoneKeyboardButton()
         }
     }
     
@@ -137,7 +137,6 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
         awakeThankViewFromNib()
         showThankViewButton.isEnabled = false
-        thankTextView.text = ""
     }
     @IBAction func sendThank(_ sender: UIButton) {
         thankView?.removeSubviewWithTransform(duration: 0.4)

@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Elite_Self" customModuleProvider="target">
             <connections>
-                <outlet property="thankTextView" destination="RkS-2m-9Q8" id="QPT-eg-5jf"/>
                 <outlet property="thankView" destination="iN0-l3-epB" id="nXH-uP-d1j"/>
             </connections>
         </placeholder>
@@ -35,6 +34,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="245" id="IDM-PQ-G5W"/>
                     </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -81,6 +81,9 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="NO"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="thankText" destination="RkS-2m-9Q8" id="BAD-aa-lIZ"/>
+            </connections>
             <point key="canvasLocation" x="60" y="77"/>
         </view>
     </objects>

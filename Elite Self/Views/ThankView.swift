@@ -10,6 +10,7 @@ import UIKit
 
 class ThankView: UIView {
     
+    @IBOutlet weak var thankText: UITextView!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.masksToBounds = true
@@ -50,6 +51,23 @@ class ThankView: UIView {
             layer.startPoint = CGPoint(x: 0, y: 0)
             layer.endPoint = CGPoint(x: 0, y: 1)
         }
+    }
+    func addDoneKeyboardButton() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
+        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
+        trashButton.tintColor = customTintColor
+        doneButton.tintColor = customTintColor
+        toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
+        thankText.inputAccessoryView = toolBar
+    }
+    @objc func doneButtonClicked() {
+        thankText.resignFirstResponder()
+    }
+    @objc func clearTextView() {
+        thankText.text = " "
     }
 }
 
