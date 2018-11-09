@@ -17,11 +17,9 @@ class PrivacyViewController: UIViewController, StoryboardedVCs  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupNavigationBar()
         addNavigatonBarButtons()
         addWebViewContent()
     }
-    
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)

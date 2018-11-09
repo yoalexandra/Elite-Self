@@ -51,12 +51,6 @@
                                             <action selector="showThnxView:" destination="BYZ-38-t0r" id="rF0-kF-318"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tZn-OV-1jo"/>
-                                    <barButtonItem title="🗑" id="LzK-cN-tqY">
-                                        <connections>
-                                            <action selector="clearTextView:" destination="BYZ-38-t0r" id="bHN-s5-zOa"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cSY-HH-fCt"/>
                                     <barButtonItem title="⚙️" id="8dx-C5-Dvh">
                                         <connections>

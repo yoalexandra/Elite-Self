@@ -13,7 +13,7 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
     weak var coordinator: MainCoordinator?
     
     let sectionHeaderTitles = ["Manage notifications", "Privacy Policy"]
-    let sectionFooterTitles = ["Schedule notifications, choose time to get your positive words.", "Privacy policy and support"]
+    let sectionFooterTitles = ["Schedule notifications, choose time to get your positive words. You can turn it On/Off in System Settings", "Privacy policy and support"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
