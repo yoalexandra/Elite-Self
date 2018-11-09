@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let navigationController = UINavigationController()
+        let navigationController = PresenterViewController()
         coordinator = MainCoordinator(presenter: navigationController)
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)

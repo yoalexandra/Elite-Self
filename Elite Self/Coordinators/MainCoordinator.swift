@@ -11,9 +11,9 @@ let customTintColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
 
 class MainCoordinator: Coordinator {
     
-    var presenter: UINavigationController
+    var presenter: PresenterViewController
     
-    init(presenter: UINavigationController) {
+    init(presenter: PresenterViewController) {
         self.presenter = presenter
         presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
         presenter.navigationBar.shadowImage = UIImage()

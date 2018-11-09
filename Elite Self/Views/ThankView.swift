@@ -27,19 +27,16 @@ class ThankView: UIView {
             updateView()
         }
     }
-    
     @IBInspectable var horizontalGradient: Bool = false {
         didSet {
             updateView()
         }
     }
-    
     override class var layerClass: AnyClass {
         get {
             return CAGradientLayer.self
         }
     }
-    
     func updateView() {
         let layer = self.layer as! CAGradientLayer
         layer.colors = [ firstColor.cgColor, secondColor.cgColor ]

@@ -15,7 +15,7 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
     let content = UNMutableNotificationContent()
     var contents: [NotificationModel] = []
     // The initial user notification time
-    let defhour = 10
+    let defhour = 10 // it will be default value , and can be change by user
     let defmin = 30
     // MARK: - Localizable strings properties
     let notifTitle = NSLocalizedString("This words are powerful", comment: "")

@@ -31,6 +31,8 @@
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
+		FA93EA95219570560077DC05 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA94219570560077DC05 /* FadeAnimation.swift */; };
+		FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA96219570740077DC05 /* PresenterViewController.swift */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
 		FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCEA2185990C003A8127 /* privacy_policy.html */; };
 		FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */; };
@@ -71,6 +73,8 @@
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
 		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA93EA94219570560077DC05 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
+		FA93EA96219570740077DC05 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
 		FA95D3252144316200003F2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThankView.strings; sourceTree = "<group>"; };
 		FAE6CCEA2185990C003A8127 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				C3C9D26520A5AA7D00B08031 /* Views */,
 				C3C9D26620A5AA9A00B08031 /* View Controllers */,
 				FA11150321625BDC00317111 /* Coordinators */,
+				FA93EA8F2194BC710077DC05 /* Transition */,
 				FA1114FC21625AA400317111 /* Extensions */,
 				C3C9D26820A5AB3000B08031 /* Supporting Files */,
 				C3D50C912030A46600EA1056 /* Main.storyboard */,
@@ -190,6 +195,15 @@
 				FA11150821625CA400317111 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		FA93EA8F2194BC710077DC05 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				FA93EA94219570560077DC05 /* FadeAnimation.swift */,
+				FA93EA96219570740077DC05 /* PresenterViewController.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 		FAE6CCEC21859960003A8127 /* TableViewCells */ = {
@@ -305,6 +319,7 @@
 				FA11150921625CA400317111 /* MainCoordinator.swift in Sources */,
 				C3319A0D20DDBCB1001A9F28 /* NotificationModel.swift in Sources */,
 				C3D50CA32030A53C00EA1056 /* ViewController.swift in Sources */,
+				FA93EA95219570560077DC05 /* FadeAnimation.swift in Sources */,
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
@@ -316,6 +331,7 @@
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
 				FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */,
+				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
 				FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */,

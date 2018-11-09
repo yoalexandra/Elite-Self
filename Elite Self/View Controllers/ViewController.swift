@@ -32,7 +32,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         displayTodayDate()
         NotifyUserManager.shared.delegate()
         NotifyUserManager.shared.notifyUser()
-        doneKeyboardButton()
+        addKeyboardButtons()
         registerNotifToShowTextAboveKeyboard()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -57,17 +57,23 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
   
     func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
     
-    func doneKeyboardButton() {
+    func addKeyboardButtons() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
+        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
+        trashButton.tintColor = customTintColor
         doneButton.tintColor = customTintColor
-        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
         notesTextView.inputAccessoryView = toolBar
     }
     @objc func doneButtonClicked() {
         view.endEditing(true)
+    }
+    @objc func clearTextView() {
+        defaults.removeObject(forKey: saveTextKey)
+        notesTextView.text = " "
     }
     func saveText() {
         defaults.set(notesTextView.text, forKey: saveTextKey)
@@ -114,10 +120,6 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     }
     
     // MARK: - @IBActions
-    @IBAction func clearTextView(_ sender: UIBarButtonItem) {
-        defaults.removeObject(forKey: saveTextKey)
-        notesTextView.text = " "
-    }
     // ViewControllers navigation
     @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
         coordinator?.visualBoardSubscription()
