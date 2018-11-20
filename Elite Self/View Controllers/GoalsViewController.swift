@@ -39,21 +39,20 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         navigationItem.title = largeTitleText
     }
     func addNavigatonBarButtons() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissGVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissGVC))
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
         navigationItem.setHidesBackButton(true, animated: false)
     }
     @objc func dismissGVC() {
-        // TODO: Custom transition
         coordinator?.presenter.popToRootViewController(animated: true)
     }
  
     func doneKeyboardButton() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
+        let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.clearTextView))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonClicked))
         trashButton.tintColor = customTintColor
         doneButton.tintColor = customTintColor
         toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)

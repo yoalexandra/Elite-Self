@@ -12,12 +12,20 @@
 "Manifest your day" = "Делай сегодня";
 // GoalsViewController:
 "Dream bigger" = "Мечтай больше";
-// VisualBoardViewController
+// VisualBoardViewController:
 "Visualize often" = "Доска желаний";
 "Delete this picture?" = "Удалить это фото?";
 "Are you sure you want to delete this picture?" = "Вы уверены, что желаете удалить это фото?";
 "Yes" = "Да";
 "No" = "Нет";
+// CardsCollectionViewController:
+"Say more good words" = "Сказать себе";
+"Back" = "Назад";
+"Save" = "Сохранить";
+// SettingsTableViewController:
+"Settings" = "Настройки";
+// PrivacyViewController:
+"Privacy Policy" = "Privacy Policy";
 // UserNotification:
 "This words are powerful" = "Слова - сила";
 "Some of them better to be repeated" = "Некоторые лучше повторять :)";

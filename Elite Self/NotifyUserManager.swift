@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 
 class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
+    
     static let shared = NotifyUserManager()
     //MARK: - property to set user notification content
     let content = UNMutableNotificationContent()
@@ -36,7 +37,7 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
     }
     // Setting up & schedule user notification content
     func notifyUser() {
-        //Parse JSON to UserNotification content
+        //Parse JSON for UserNotification content
         guard let path = Bundle.main.path(forResource: "quotes", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
         do {
@@ -60,7 +61,7 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
         // Remove all pending notifications
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
-        
+        // Setup user notifications
         for item in contents {
             var date = DateComponents()
             date.calendar = Calendar.current
@@ -73,7 +74,7 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
             content.body = item.body
             let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
             let request = UNNotificationRequest(identifier: item.id, content: content, trigger: trigger)
-            
+            // Add request to UserNotificationCenter
             center.add(request)  { (error) in
                 if let errorPerforms = error {
                     print("Fatal error: \(errorPerforms.localizedDescription)")

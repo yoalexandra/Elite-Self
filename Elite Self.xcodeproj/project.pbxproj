@@ -31,6 +31,7 @@
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
+		FA76641421A3B63300F79868 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA76641321A3B63200F79868 /* Lobster.ttf */; };
 		FA93EA95219570560077DC05 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA94219570560077DC05 /* FadeAnimation.swift */; };
 		FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA96219570740077DC05 /* PresenterViewController.swift */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
@@ -73,6 +74,7 @@
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
 		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA76641321A3B63200F79868 /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
 		FA93EA94219570560077DC05 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
 		FA93EA96219570740077DC05 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		C3C9D26820A5AB3000B08031 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA76641321A3B63200F79868 /* Lobster.ttf */,
 				FAE6CCEA2185990C003A8127 /* privacy_policy.html */,
 				C3EBDB9B20659BE800AF0328 /* StarsScene.sks */,
 				C3D50C972030A46600EA1056 /* Assets.xcassets */,
@@ -299,6 +302,7 @@
 				FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */,
 				C3C5E0FA203290E00045B1D5 /* quotes.json in Resources */,
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
+				FA76641421A3B63300F79868 /* Lobster.ttf in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
 				FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
