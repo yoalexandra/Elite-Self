@@ -42,7 +42,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     }
     func addNavigatonBarButtons() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPhoto))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVB))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissVB))
         navigationItem.setHidesBackButton(true, animated: false)
         navigationItem.leftBarButtonItem?.tintColor = customTintColor
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
@@ -55,8 +55,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     }
     @objc func dismissVB() {
         savePhotoCollection()
-        // TODO: Custom transition
-          coordinator?.presenter.popToRootViewController(animated: true)
+        coordinator?.presenter.popToRootViewController(animated: true)
     }
     // MARK: - UILongPressGestureRecognizer
     func addLongPressGestureRecognizer() {
@@ -140,7 +139,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
             os_log("Failed to save photos", log: OSLog.default, type: .error)
         }
     }
-    // Load Photos // TODO:  add do-catch block!
+    // Load Photos //TODO:  add do-catch block!
     private func loadPhotoCollection() -> [PhotoLibrary]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
        
@@ -153,7 +152,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     }
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-} // End class
+} // End class VisualBoardViewController
 
 // MARK: -  UICollectionViewDelegateFlowLayout
 extension VisualBoardViewController: UICollectionViewDelegateFlowLayout {

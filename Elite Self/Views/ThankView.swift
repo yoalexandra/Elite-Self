@@ -11,6 +11,7 @@ import UIKit
 class ThankView: UIView {
     
     @IBOutlet weak var thankText: UITextView!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.masksToBounds = true

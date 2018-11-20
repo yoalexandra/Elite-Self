@@ -23,4 +23,8 @@ extension UIView {
             self.removeFromSuperview()
         })
     }
+    func removeSubview() {
+        // use this when transitioning 
+        self.removeFromSuperview()
+    }
 }

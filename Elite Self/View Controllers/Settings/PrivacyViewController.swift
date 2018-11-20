@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class PrivacyViewController: UIViewController, StoryboardedVCs  {
+class PrivacyViewController: UIViewController, StoryboardedVCs {
     //MARK: - Properties
     weak var coordinator: MainCoordinator?
     //MARK: - IBOutlet properties
@@ -23,11 +23,10 @@ class PrivacyViewController: UIViewController, StoryboardedVCs  {
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPPVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissPPVC))
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func dismissPPVC() {
-        //TODO: Custom transition
         coordinator?.settingsVCSubscription()
     }
     // MARK: - WebView

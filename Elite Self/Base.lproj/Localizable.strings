@@ -5,18 +5,28 @@
   Created by Alexandra Beznosova on 30/08/2018.
   Copyright © 2018 Divine App. All rights reserved.
 */
-
-// ViewController Localizible strings
+//=====================
+// Localizible strings:
+//=====================
+// ViewController:
 "Manifest your day" = "Manifest your day";
-// GoalsViewController Localizible strings
+// GoalsViewController:
 "Dream bigger" = "Dream bigger";
-// VisualBoardViewController Localizible strings
+// VisualBoardViewController:
 "Visualize often" = "Visualize often";
 "Delete this picture?" = "Delete this picture?";
 "Are you sure you want to delete this picture?" = "Are you sure you want to delete this picture?";
 "Yes" = "Yes";
 "No" = "No";
-// UserNotification Localizable strings
+// CardsCollectionViewController:
+"Say more good words" = "Say more good words";
+"Back" = "Back";
+"Save" = "Save";
+// SettingsTableViewController:
+"Settings" = "Settings";
+// PrivacyViewController:
+"Privacy Policy" = "Privacy Policy";
+// UserNotification:
 "This words are powerful" = "This words are powerful";
 "Some of them better to be repeated" = "Some of them better to be repeated";
 // Affimations

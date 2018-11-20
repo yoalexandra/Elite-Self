@@ -23,12 +23,11 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissSVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissSVC))
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     
     @objc func dismissSVC() {
-        //TODO: Custom transition
         coordinator?.presenter.popToRootViewController(animated: true)
     }
     func registerTableViewCells() {

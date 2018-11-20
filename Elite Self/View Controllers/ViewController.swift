@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
+class ViewController: UIViewController, StoryboardedVCs,UITextViewDelegate {
     
     weak var coordinator: MainCoordinator?
     // MARK: - Outlets prorerties
@@ -27,6 +27,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     // MARK: - viewDidLoad method in case you lost lol
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         self.notesTextView.delegate = self
         setupNavigationBar()
         displayTodayDate()
@@ -123,17 +124,25 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     // ViewControllers navigation
     @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
         coordinator?.visualBoardSubscription()
+        thankView?.removeSubview()
+        showThankViewButton.isEnabled = true
     }
     @IBAction func presentGoalsVC(_ sender: UIBarButtonItem) {
         coordinator?.goasVClSubscription()
+        thankView?.removeSubview()
+        showThankViewButton.isEnabled = true
     }
     
     @IBAction func presentCardsVC(_ sender: UIBarButtonItem) {
         coordinator?.cardsVCSubscription()
+        thankView?.removeSubview()
+        showThankViewButton.isEnabled = true
     }
     
     @IBAction func presentSettingsVC(_ sender: UIBarButtonItem) {
         coordinator?.settingsVCSubscription()
+        thankView?.removeSubview()
+        showThankViewButton.isEnabled = true
     }
     // ThankView events
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {

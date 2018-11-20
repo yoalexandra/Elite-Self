@@ -12,25 +12,23 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     
     weak var coordinator: MainCoordinator?
     var affirmations = [String]()
+    let editButtonTitle = NSLocalizedString("Save", comment: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigatonBarButtons()
         parseJSON()
     }
-    
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissEWVC))
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editCells))
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissEWVC))
-        navigationItem.rightBarButtonItems = [ doneButton, editButton]
-        editButton.tintColor = customTintColor
+        navigationItem.leftBarButtonItem = editButtonItem
+        let doneButton = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissEWVC))
+        navigationItem.rightBarButtonItems = [doneButton]//, editButton]
+        navigationItem.leftBarButtonItem?.tintColor = customTintColor
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func dismissEWVC() {
-        // TODO: Custom transition
         coordinator?.presenter.popToRootViewController(animated: true)
     }
     @objc func editCells() {
@@ -52,7 +50,6 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
             print("Fatal error: \(error.localizedDescription)")
         }
     }
-    
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -64,10 +61,29 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "affirmationCell", for: indexPath) as? AffirmationViewCell else {
-            fatalError("The dequeued cell is not instance of AffirmationCollectionViewCell")
+            fatalError("The dequeued cell is not instance of AffirmationViewCell")
         }
         cell.affirmationViewText.text = affirmations[indexPath.item]
         return cell
     }
-
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        for visibleCell in collectionView.visibleCells {
+            
+            guard let cell = visibleCell as? AffirmationViewCell else { return }
+            
+            if editing {
+                self.editButtonItem.title = editButtonTitle
+                cell.affirmationViewText.isUserInteractionEnabled = true
+                cell.addDoneKeyboardButton()
+                cell.affirmationViewText.becomeFirstResponder()
+            } else {
+                //TODO: Save custom affirmation
+                print("Text should be saved in new array!")
+            }
+        }
+    }
+    
 }
