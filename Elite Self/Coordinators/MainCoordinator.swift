@@ -7,7 +7,7 @@
 //
 import UIKit
 
-let customTintColor = UIColor.init(hexValue: "#204764", alpha: 1.0)
+let customTintColor = UIColor.deepRed1 //UIColor.init(hexValue: "#01739a", alpha: 1.0)  // old #204764
 let backButtonTitle = NSLocalizedString("Back", comment: "")
 let customFont = UIFont(name: "Lobster", size: 34.0)
 
@@ -25,8 +25,8 @@ class MainCoordinator: Coordinator {
         presenter.navigationBar.shadowImage = UIImage()
         presenter.navigationBar.backgroundColor = .clear
         presenter.navigationBar.prefersLargeTitles = true
-        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  customTintColor!, NSAttributedString.Key.font: UIFont(name: "Lobster", size: UIFont.labelFontSize)!]
-        presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor!, NSAttributedString.Key.font: customFont!]
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  customTintColor, NSAttributedString.Key.font: UIFont(name: "Lobster", size: UIFont.labelFontSize)!]
+        presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor, NSAttributedString.Key.font: customFont!]
 
     }
     func start() {
@@ -71,10 +71,9 @@ class MainCoordinator: Coordinator {
  #5900e2
  #5800dd
  ////////
- #051333
- #041b2c
+ #051333  dark blue 0 too dark
  #01739a
- #062651 dark blue
+ #062651 dark blue 1 lighter
  #0e345c nightblue lighter
  for star
  #471370 purple

@@ -19,7 +19,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
    
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Visualize often", comment: "")
-    let alertTitleText = NSLocalizedString("Delete this picture?", comment: "")
+    let alertTitleText = NSLocalizedString("Delete this picture from your Visual Board?", comment: "")
     let alertMessageText = NSLocalizedString("Are you sure you want to delete this picture?", comment: "")
     let alertComformActionTitle = NSLocalizedString("Yes", comment: "")
     let alertCancelActionTitle = NSLocalizedString("No", comment: "")
