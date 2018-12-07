@@ -11,7 +11,9 @@ import UIKit
 class SettingsTableViewController: UITableViewController, StoryboardedVCs {
     
     weak var coordinator: MainCoordinator?
+    var delegate: NotifyUserManagerDelegate?
     
+    // Titles for Header and Footer
     let sectionHeaderTitles = ["Manage notifications", "Privacy Policy"]
     let sectionFooterTitles = ["Schedule notifications, choose time to get your positive words. You can turn it On/Off in System Settings", "Privacy policy and support"]
     
@@ -56,6 +58,7 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
         switch indexPath.section {
         case 0:
             let cell0 = tableView.dequeueReusableCell(withIdentifier: ManageNotificationCell.identifier, for: indexPath) as! ManageNotificationCell
+            
             return cell0
         case 1:
             let cell1 = tableView.dequeueReusableCell(withIdentifier: PrivacyPolicyCell.identifier, for: indexPath) as! PrivacyPolicyCell
