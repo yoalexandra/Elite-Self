@@ -30,7 +30,7 @@ class ViewController: UIViewController, StoryboardedVCs,UITextViewDelegate {
         
         self.notesTextView.delegate = self
         setupNavigationBar()
-        //displayTodayDate() now is only matter
+        //displayTodayDate() ok now is only matter
         NotifyUserManager.shared.delegate()
         NotifyUserManager.shared.notifyUser()
         addKeyboardButtons()
@@ -51,8 +51,8 @@ class ViewController: UIViewController, StoryboardedVCs,UITextViewDelegate {
         dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
         dateLabel.textColor = customTintColor
         dateLabel.textAlignment = .center
-        dateLabel.font = UIFont(name: "Helvetica", size: 18)
-        navigationItem.titleView = dateLabel
+        dateLabel.font = customFont
+        //navigationItem.titleView = dateLabel
     }
   
     func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
@@ -73,7 +73,7 @@ class ViewController: UIViewController, StoryboardedVCs,UITextViewDelegate {
     }
     @objc func clearTextView() {
         defaults.removeObject(forKey: saveTextKey)
-        notesTextView.text = " "
+        notesTextView.text = ""
     }
     func saveText() {
         defaults.set(notesTextView.text, forKey: saveTextKey)

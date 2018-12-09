@@ -12,12 +12,27 @@ class AffirmationViewCell: UICollectionViewCell,  UITextViewDelegate  {
     
     @IBOutlet weak var affirmationViewText: UITextView!
     
+    // Properties to save text with UserDefaults
+    let saveAffimationTextKey = "userAffirmationText"
+    let defaults = UserDefaults.standard
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 10.0
+        contentView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+        contentView.layer.cornerRadius = 15
         contentView.clipsToBounds = true
     }
-    //TODO: add inputAccessoryView to text view
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var frame = layoutAttributes.frame
+        frame.size.height = ceil(size.height)
+        layoutAttributes.frame = frame
+        return layoutAttributes
+    }
+   
     func addDoneKeyboardButton() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -33,7 +48,25 @@ class AffirmationViewCell: UICollectionViewCell,  UITextViewDelegate  {
         affirmationViewText.resignFirstResponder()
     }
     @objc func clearTextView() {
-        affirmationViewText.text = " "
+         defaults.removeObject(forKey: saveAffimationTextKey)
+        affirmationViewText.text = ""
+    }
+
+    func saveText() {
+        defaults.set(affirmationViewText.text, forKey: saveAffimationTextKey )
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        saveText()
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        saveText()
+    }
+    func loadTextFromUserDefaults() {
+        if let textViewContents = defaults.string(forKey: saveAffimationTextKey) {
+           affirmationViewText.text = textViewContents
+        } else {
+            affirmationViewText.becomeFirstResponder()
+        }
     }
 }
 

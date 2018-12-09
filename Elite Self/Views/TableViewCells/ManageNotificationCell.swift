@@ -9,9 +9,9 @@
 import UIKit
 
 class ManageNotificationCell: UITableViewCell {
-
-    @IBOutlet weak var timePicker: UIDatePicker!
     
+    @IBOutlet weak var timePicker: UIDatePicker!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +23,9 @@ class ManageNotificationCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
-
+    
+    func newTimeNotification(selectedHour: Int, selectedMin: Int) {
+        //timePicker.date = selectedHour
+    }
+    
 }

@@ -29,7 +29,7 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         registerNotifToShowTextAboveKeyboard()
         loadSKScene()
     }
-    
+    // Here loading saved text
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadTextFromUserDefaults()
@@ -43,6 +43,7 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    // Dismiss vc and show main screen
     @objc func dismissGVC() {
         coordinator?.presenter.popToRootViewController(animated: true)
     }
@@ -58,19 +59,24 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
         goalsTextView.inputAccessoryView = toolBar
     }
+    // Delete all text
     @objc func clearTextView() {
         defaults.removeObject(forKey: textViewContents)
         goalsTextView.text = " "
     }
+    // Hide keyboard if user end editing text
     @objc func doneButtonClicked() {
         view.endEditing(true)
     }
+    // Save user input text
     func saveText() {
         defaults.set(goalsTextView.text, forKey: textViewContents)
     }
+    // Save user input text when end editing
     func textViewDidEndEditing(_ textView: UITextView) {
         saveText()
     }
+    // Show saved text
     func loadTextFromUserDefaults() {
         if let textViewContents = defaults.string(forKey: textViewContents) {
             goalsTextView.text = textViewContents
@@ -83,6 +89,7 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editingTextAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    // Show editing text above keyboard frame
     @objc func editingTextAboveKeyboard(notification: Notification) {
         let userInfo = notification.userInfo
         let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -95,6 +102,7 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         }
         goalsTextView.scrollRangeToVisible(goalsTextView.selectedRange)
     }
+    // Show stars scene SKView
     func loadSKScene() {
         let emitterScene = StarsScene()
         let skView = self.view as! SKView
@@ -102,6 +110,11 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         emitterScene.size = view.bounds.size
         skView.presentScene(emitterScene)
     }
+    // Show keyboard when user touch screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        goalsTextView.becomeFirstResponder()
+    }
+    // Show phone status bar
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 } // End class

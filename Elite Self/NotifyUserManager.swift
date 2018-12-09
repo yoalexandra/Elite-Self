@@ -12,15 +12,16 @@ import UserNotifications
 class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
     
     static let shared = NotifyUserManager()
+    override private init() {}
     //MARK: - property to set user notification content
     let content = UNMutableNotificationContent()
     var contents: [NotificationModel] = []
     // The initial user notification time
-    let defhour = 10 // it will be default value , and can be change by user
-    let defmin = 30
+    var defhour = 10 // it will be default value , and can be change by user
+    var defmin = 30
     // MARK: - Localizable strings properties
-    let notifTitle = NSLocalizedString("This words are powerful", comment: "")
-    let notifSubtitle = NSLocalizedString("Some of them better to be repeated", comment: "")
+    let notifTitle = NSLocalizedString("This words are powerful", comment: "")// add this "Simply remember"
+    let notifSubtitle = NSLocalizedString("Some of it repeat", comment: "")  //or simple reminder to title
     // MARK: - Register UserNotifications
     func allowUserNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {(granted, error) in
