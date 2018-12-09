@@ -16,8 +16,17 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionViewVC()
         addNavigatonBarButtons()
         parseJSON()
+    }
+    func setupCollectionViewVC() {
+        collectionView?.backgroundColor = UIColor.init(hexValue: "#E1CBCD", alpha: 1.0)
+        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout,
+            let collectionView = collectionView {
+            let width = collectionView.frame.width - 20
+            flowLayout.estimatedItemSize = CGSize(width: width, height: 200)
+        }
     }
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
@@ -28,10 +37,9 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
         navigationItem.leftBarButtonItem?.tintColor = customTintColor
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
+    // Return to main screen
     @objc func dismissEWVC() {
         coordinator?.presenter.popToRootViewController(animated: true)
-    }
-    @objc func editCells() {
     }
     func parseJSON() {
         //Parse JSON to UserNotification content
@@ -87,3 +95,4 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     }
     
 }
+
