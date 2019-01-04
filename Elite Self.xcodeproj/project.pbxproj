@@ -21,6 +21,7 @@
 		C3D50CA32030A53C00EA1056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D50CA22030A53C00EA1056 /* ViewController.swift */; };
 		C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3EBDB9B20659BE800AF0328 /* StarsScene.sks */; };
 		C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBDB9D20659C3000AF0328 /* StarsScene.swift */; };
+		FA016F1521DCEBBF00B76F43 /* Elite_Self.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */; };
 		FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1114FD21625AE800317111 /* UIColor+HexValue.swift */; };
 		FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */; };
 		FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150121625B8500317111 /* Date+DateFormatter.swift */; };
@@ -61,6 +62,7 @@
 		C3D50CA22030A53C00EA1056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3EBDB9B20659BE800AF0328 /* StarsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarsScene.sks; sourceTree = "<group>"; };
 		C3EBDB9D20659C3000AF0328 /* StarsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsScene.swift; sourceTree = "<group>"; };
+		FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EliteSelf.xcdatamodel; sourceTree = "<group>"; };
 		FA1114FD21625AE800317111 /* UIColor+HexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
 		FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimations.swift"; sourceTree = "<group>"; };
 		FA11150121625B8500317111 /* Date+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormatter.swift"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
 				FA54439E2138816200EC938E /* Localizable.strings */,
+				FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */,
 			);
 			path = "Elite Self";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
+				FA016F1521DCEBBF00B76F43 /* Elite_Self.xcdatamodeld in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
 				FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */,
@@ -556,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */,
+			);
+			currentVersion = FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */;
+			path = Elite_Self.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3D50C822030A46500EA1056 /* Project object */;
 }

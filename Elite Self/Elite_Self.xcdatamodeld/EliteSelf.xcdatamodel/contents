@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C48a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CustomAffirmations" representedClassName="CustomAffirmations" syncable="YES" codeGenerationType="class">
+        <attribute name="phrase" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CustomAffirmations" positionX="-63" positionY="-18" width="128" height="60"/>
+    </elements>
+</model>

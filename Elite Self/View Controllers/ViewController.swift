@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, StoryboardedVCs,UITextViewDelegate {
+class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     
     weak var coordinator: MainCoordinator?
     // MARK: - Outlets prorerties
