@@ -21,12 +21,16 @@
 		C3D50CA32030A53C00EA1056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D50CA22030A53C00EA1056 /* ViewController.swift */; };
 		C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3EBDB9B20659BE800AF0328 /* StarsScene.sks */; };
 		C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBDB9D20659C3000AF0328 /* StarsScene.swift */; };
+		FA016F1521DCEBBF00B76F43 /* Elite_Self.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */; };
 		FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1114FD21625AE800317111 /* UIColor+HexValue.swift */; };
 		FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */; };
 		FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150121625B8500317111 /* Date+DateFormatter.swift */; };
 		FA11150521625BF800317111 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150421625BF800317111 /* Coordinator.swift */; };
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
+		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
+		FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */; };
+		FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */; };
 		FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */; };
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
@@ -37,10 +41,6 @@
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
 		FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCEA2185990C003A8127 /* privacy_policy.html */; };
 		FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */; };
-		FAE6CCF121859CF3003A8127 /* ManageNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */; };
-		FAE6CCF321859D2D003A8127 /* ManageNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */; };
-		FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */; };
-		FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */; };
 		FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,14 +61,20 @@
 		C3D50CA22030A53C00EA1056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3EBDB9B20659BE800AF0328 /* StarsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarsScene.sks; sourceTree = "<group>"; };
 		C3EBDB9D20659C3000AF0328 /* StarsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsScene.swift; sourceTree = "<group>"; };
+		FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EliteSelf.xcdatamodel; sourceTree = "<group>"; };
 		FA1114FD21625AE800317111 /* UIColor+HexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
 		FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimations.swift"; sourceTree = "<group>"; };
 		FA11150121625B8500317111 /* Date+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormatter.swift"; sourceTree = "<group>"; };
 		FA11150421625BF800317111 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
+		FA194EC221FC62250004064D /* Affirmations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Affirmations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA194EC321FC62250004064D /* Affirmations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Affirmations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerDelegate.swift; sourceTree = "<group>"; };
+		FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; };
+		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
@@ -81,10 +87,6 @@
 		FA95D3252144316200003F2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThankView.strings; sourceTree = "<group>"; };
 		FAE6CCEA2185990C003A8127 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
 		FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
-		FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageNotificationCell.xib; sourceTree = "<group>"; };
-		FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageNotificationCell.swift; sourceTree = "<group>"; };
-		FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyCell.swift; sourceTree = "<group>"; };
-		FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyCell.xib; sourceTree = "<group>"; };
 		FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 		C3C9D26420A5AA6600B08031 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA1F8AA521EB8A700050A66D /* DataModel */,
 				C37FDCCB20A0F1A400460325 /* PhotoLibrary.swift */,
 				C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */,
 			);
@@ -150,6 +153,7 @@
 				C3D50C8B2030A46500EA1056 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		C3D50C8B2030A46500EA1056 /* Products */ = {
 			isa = PBXGroup;
@@ -169,6 +173,7 @@
 				C3C9D26520A5AA7D00B08031 /* Views */,
 				C3C9D26620A5AA9A00B08031 /* View Controllers */,
 				FA11150321625BDC00317111 /* Coordinators */,
+				FA194EC621FC6AA80004064D /* Protocols */,
 				FA93EA8F2194BC710077DC05 /* Transition */,
 				FA1114FC21625AA400317111 /* Extensions */,
 				C3C9D26820A5AB3000B08031 /* Supporting Files */,
@@ -177,6 +182,7 @@
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
 				FA54439E2138816200EC938E /* Localizable.strings */,
+				FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */,
 			);
 			path = "Elite Self";
 			sourceTree = "<group>";
@@ -194,10 +200,28 @@
 		FA11150321625BDC00317111 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				FA11150421625BF800317111 /* Coordinator.swift */,
 				FA11150821625CA400317111 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		FA194EC621FC6AA80004064D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA11150421625BF800317111 /* Coordinator.swift */,
+				FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA1F8AA521EB8A700050A66D /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA194EC221FC62250004064D /* Affirmations+CoreDataClass.swift */,
+				FA194EC321FC62250004064D /* Affirmations+CoreDataProperties.swift */,
+				FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		FA93EA8F2194BC710077DC05 /* Transition */ = {
@@ -212,10 +236,7 @@
 		FAE6CCEC21859960003A8127 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				FAE6CCF221859D2D003A8127 /* ManageNotificationCell.swift */,
-				FAE6CCF021859CF3003A8127 /* ManageNotificationCell.xib */,
-				FAE6CCF421859D5E003A8127 /* PrivacyPolicyCell.swift */,
-				FAE6CCF621859D6D003A8127 /* PrivacyPolicyCell.xib */,
+				FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -299,14 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE6CCF721859D6D003A8127 /* PrivacyPolicyCell.xib in Resources */,
 				C3C5E0FA203290E00045B1D5 /* quotes.json in Resources */,
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
 				FA76641421A3B63300F79868 /* Lobster.ttf in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
 				FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
-				FAE6CCF121859CF3003A8127 /* ManageNotificationCell.xib in Resources */,
 				FA95D3212144315C00003F2F /* ThankView.xib in Resources */,
 				C3D50C982030A46600EA1056 /* Assets.xcassets in Resources */,
 				C3D50C932030A46600EA1056 /* Main.storyboard in Resources */,
@@ -327,6 +346,7 @@
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
+				FA016F1521DCEBBF00B76F43 /* Elite_Self.xcdatamodeld in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
 				FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */,
@@ -335,15 +355,16 @@
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
 				FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */,
+				FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */,
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
+				FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
-				FAE6CCF521859D5E003A8127 /* PrivacyPolicyCell.swift in Sources */,
+				FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
 				FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */,
 				FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */,
 				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
-				FAE6CCF321859D2D003A8127 /* ManageNotificationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +577,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA016F1321DCEBBF00B76F43 /* Elite_Self.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */,
+			);
+			currentVersion = FA016F1421DCEBBF00B76F43 /* EliteSelf.xcdatamodel */;
+			path = Elite_Self.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3D50C822030A46500EA1056 /* Project object */;
 }

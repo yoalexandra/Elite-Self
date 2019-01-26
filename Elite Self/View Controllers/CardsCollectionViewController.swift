@@ -7,25 +7,43 @@
 //
 
 import UIKit
+import CoreData
 //TODO: Global refactoring , check if you can make some methods reusable!
+//TODO: save userPhrases with CoreData  // CustomAffirmations - entity phrase
 class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs {
-    
+    // Property to switch on if user setup custom affirmation
+    var isUserPhraseSetup = false
+    // Routing
     weak var coordinator: MainCoordinator?
-    var affirmations = [String]()
+    // Cards items // tmp data
+    var affirmations = [
+                        "THANK YOU! Thank whatever that's happening for helping me to evolve",
+                        "The best is yet to come",
+                        "Amazing things are keeping to happen today",
+                        "Think beautiful thoughts",
+                        "Be the energy you want to attract",
+                        "My Life just keeps getting better!",
+                        "Breathe through all changes. You're exactly where you should be in your transformation",
+                        "Think positive",
+                        "Every month of my Life is a period of magnificent transformation",
+                        "My Life is beautiful"]
     let editButtonTitle = NSLocalizedString("Save", comment: "")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    // MARK: - viewDidLoad - in case your lost lol I know you will
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionViewVC()
         addNavigatonBarButtons()
-        parseJSON()
+        //convertToJSONArray(moArray: [Affirmations])
     }
+    // CollectionCell sizing
     func setupCollectionViewVC() {
         collectionView?.backgroundColor = UIColor.init(hexValue: "#E1CBCD", alpha: 1.0)
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout,
             let collectionView = collectionView {
             let width = collectionView.frame.width - 20
-            flowLayout.estimatedItemSize = CGSize(width: width, height: 200)
+            flowLayout.estimatedItemSize = CGSize(width: width, height: 150)
         }
     }
     // MARK: - Navigation Bar
@@ -40,23 +58,6 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     // Return to main screen
     @objc func dismissEWVC() {
         coordinator?.presenter.popToRootViewController(animated: true)
-    }
-    func parseJSON() {
-        //Parse JSON to UserNotification content
-        guard let path = Bundle.main.path(forResource: "quotes", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            let jsonDict = json as! Dictionary<String, Array<String>>
-            for (_ , value) in jsonDict {
-                for item in value {
-                    affirmations.append(item)
-                }
-            }
-        } catch {
-            print("Fatal error: \(error.localizedDescription)")
-        }
     }
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -93,6 +94,20 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
             }
         }
     }
-    
+	func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
+		var jsonArray: [[String: Any]] = []
+		for item in moArray {
+			var dict: [String: Any] = [:]
+			for attribute in item.entity.attributesByName {
+				//check if value is present, then add key to dictionary so as to avoid the nil value crash
+				if let value = item.value(forKey: attribute.key) {
+					dict[attribute.key] = value
+				}
+			}
+			jsonArray.append(dict)
+		}
+		return jsonArray
+	}
 }
+
 

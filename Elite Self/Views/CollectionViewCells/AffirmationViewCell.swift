@@ -11,11 +11,7 @@ import UIKit
 class AffirmationViewCell: UICollectionViewCell,  UITextViewDelegate  {
     
     @IBOutlet weak var affirmationViewText: UITextView!
-    
-    // Properties to save text with UserDefaults
-    let saveAffimationTextKey = "userAffirmationText"
-    let defaults = UserDefaults.standard
-    
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
@@ -48,25 +44,7 @@ class AffirmationViewCell: UICollectionViewCell,  UITextViewDelegate  {
         affirmationViewText.resignFirstResponder()
     }
     @objc func clearTextView() {
-         defaults.removeObject(forKey: saveAffimationTextKey)
         affirmationViewText.text = ""
-    }
-
-    func saveText() {
-        defaults.set(affirmationViewText.text, forKey: saveAffimationTextKey )
-    }
-    func textViewDidEndEditing(_ textView: UITextView) {
-        saveText()
-    }
-    func textViewDidChange(_ textView: UITextView) {
-        saveText()
-    }
-    func loadTextFromUserDefaults() {
-        if let textViewContents = defaults.string(forKey: saveAffimationTextKey) {
-           affirmationViewText.text = textViewContents
-        } else {
-            affirmationViewText.becomeFirstResponder()
-        }
     }
 }
 
