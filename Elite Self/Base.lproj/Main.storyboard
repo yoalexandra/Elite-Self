@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -178,10 +179,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88232642409999995" green="0.79503703120000002" blue="0.80342620610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="dkf-QS-ca4">
-                                <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectTime" rowHeight="199" id="Ysg-QF-ZSB" customClass="SelectTimeViewCell" customModule="Elite_Self" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dkf-QS-ca4" id="ytB-ke-aOG">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysg-QF-ZSB" id="doL-WB-P62">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="198.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Notifications Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19h-zI-UNC">
+                                            <rect key="frame" x="15" y="0.0" width="399" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GDf-uG-h6D">
+                                            <rect key="frame" x="0.0" y="44" width="414" height="156"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="156" id="O9G-Uw-3sg"/>
+                                            </constraints>
+                                            <date key="date" timeIntervalSinceReferenceDate="570175616.11837006">
+                                                <!--2019-01-26 6:06:56 AM +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="selectTime:" destination="CEi-MP-6Gd" eventType="valueChanged" id="cWf-uz-Eye"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="19h-zI-UNC" firstAttribute="top" secondItem="doL-WB-P62" secondAttribute="top" id="C0d-bT-Ty1"/>
+                                        <constraint firstAttribute="bottom" secondItem="GDf-uG-h6D" secondAttribute="bottom" id="LXT-ei-fMA"/>
+                                        <constraint firstItem="GDf-uG-h6D" firstAttribute="top" secondItem="19h-zI-UNC" secondAttribute="bottom" id="RHq-YZ-WSh"/>
+                                        <constraint firstAttribute="trailing" secondItem="19h-zI-UNC" secondAttribute="trailing" id="Ti4-nk-zMI"/>
+                                        <constraint firstItem="GDf-uG-h6D" firstAttribute="top" secondItem="doL-WB-P62" secondAttribute="top" constant="44" id="Vta-fS-8WS"/>
+                                        <constraint firstItem="19h-zI-UNC" firstAttribute="leading" secondItem="doL-WB-P62" secondAttribute="leading" constant="15" id="iv8-rH-9Hq"/>
+                                        <constraint firstAttribute="trailing" secondItem="GDf-uG-h6D" secondAttribute="trailing" id="joY-pg-JmO"/>
+                                        <constraint firstItem="GDf-uG-h6D" firstAttribute="leading" secondItem="doL-WB-P62" secondAttribute="leading" id="wbz-dg-z4t"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pickerHeightConstraint" destination="O9G-Uw-3sg" id="ytP-i1-uVc"/>
+                                    <outlet property="selectTimeCellLabel" destination="19h-zI-UNC" id="ufL-x1-2LM"/>
+                                    <outlet property="timePicker" destination="GDf-uG-h6D" id="vtL-gq-zN8"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="title" id="SMb-fG-7Mk">
+                                <rect key="frame" x="0.0" y="254.33333333333337" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SMb-fG-7Mk" id="9jw-tA-eCx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -194,8 +238,9 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9h-d8-tiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CEi-MP-6Gd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2725" y="585"/>
+            <point key="canvasLocation" x="2724.6376811594205" y="584.51086956521749"/>
         </scene>
         <!--Privacy View Controller-->
         <scene sceneID="aDd-2o-B6r">

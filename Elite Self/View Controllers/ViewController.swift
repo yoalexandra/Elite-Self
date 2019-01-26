@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
+class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, TimePickerDelegate{
     
     weak var coordinator: MainCoordinator?
     // MARK: - Outlets prorerties
@@ -23,7 +23,8 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     var dateLabel = UILabel()
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
-    
+	// Custom date
+	var newDate = Date()
     // MARK: - viewDidLoad method in case you lost lol
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,17 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         setupNavigationBar()
         //displayTodayDate() ok now is only matter
         NotifyUserManager.shared.delegate()
-        NotifyUserManager.shared.notifyUser()
+        //NotifyUserManager.shared.notifyUser()
+		
+		
+		var components = Calendar.current.dateComponents([.hour, .minute], from: newDate)
+		let hour = Int(components.hour!)
+		let minute = Int(components.minute!)
+		print(hour)
+		print(minute)
+
+		NotifyUserManager.shared.notifyByUserUserTime(customHour: hour, customMin: minute)
+		
         addKeyboardButtons()
         registerNotifToShowTextAboveKeyboard()
     }
