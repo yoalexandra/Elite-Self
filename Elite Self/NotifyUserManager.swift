@@ -20,8 +20,8 @@ class NotifyUserManager: NSObject, UNUserNotificationCenterDelegate {
     var defhour = 10
     var defmin = 30
     // MARK: - Localizable strings properties
-    let notifTitle = NSLocalizedString("This words are powerful", comment: "")// add this "Simply remember"
-    let notifSubtitle = NSLocalizedString("Some of it repeat", comment: "")  //or simple reminder to title
+    let notifTitle = NSLocalizedString("Words are powerful", comment: "")// add this "Simply remember"
+    let notifSubtitle = NSLocalizedString("Some of it repeat", comment: "")
     // MARK: - Register UserNotifications
     func allowUserNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {(granted, error) in
