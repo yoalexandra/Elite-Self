@@ -24,11 +24,15 @@
 "Save" = "Save";
 // SettingsTableViewController:
 "Settings" = "Settings";
+"Manage notifications" = "Manage notifications";
+"Privacy policy and support" = "Privacy policy and support";
+"Schedule notifications, select start time to get your positive words. Elite Self will send it every day 3 times form selected time plus 4 and  8 hours. P.S. You can turn it On/Off in System Settings" = "Schedule notifications, select start time to get your positive words. Elite Self will send it every day 3 times form selected time plus 4 and  8 hours. P.S. You can turn it On/Off in System Settings";
+"Select time" = "Select time";
 // PrivacyViewController:
 "Privacy Policy" = "Privacy Policy";
 // UserNotification:
-"This words are powerful" = "This words are powerful";
-"Some of them better to be repeated" = "Some of them better to be repeated";
+"Words are powerful" = "This words are powerful";
+"Some of it repeat" = "Some of it repeat ✨";
 // Affimations
 "It's a beautiful day" = "It's a beautiful day";
 "THANK YOU! Thank whatever that's happening for helping me to evolve" = "THANK YOU! Thank whatever that's happening for helping me to evolve";

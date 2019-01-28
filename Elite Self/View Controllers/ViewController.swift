@@ -9,9 +9,11 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, TimePickerDelegate{
+class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     
     weak var coordinator: MainCoordinator?
+	var delegate: TimePickerDelegate?
+	var isTimeSelected = false
     // MARK: - Outlets prorerties
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var thankView: ThankView!
@@ -20,11 +22,10 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, Tim
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
   
-    var dateLabel = UILabel()
+    //var dateLabel = UILabel()
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
-	// Custom date
-	var newDate = Date()
+	
     // MARK: - viewDidLoad method in case you lost lol
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,18 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, Tim
         setupNavigationBar()
         //displayTodayDate() ok now is only matter
         NotifyUserManager.shared.delegate()
-        //NotifyUserManager.shared.notifyUser()
 		
-		
-		var components = Calendar.current.dateComponents([.hour, .minute], from: newDate)
-		let hour = Int(components.hour!)
-		let minute = Int(components.minute!)
-		print(hour)
-		print(minute)
+		 if isTimeSelected  {
+			var components = Calendar.current.dateComponents([.hour, .minute], from: (delegate?.newDate)!)
+			let hour = Int(components.hour!)
+			let minute = Int(components.minute!)
+			print(hour)
 
-		NotifyUserManager.shared.notifyByUserUserTime(customHour: hour, customMin: minute)
-		
+			print(minute)
+			NotifyUserManager.shared.notifyByUserUserTime(customHour: hour, customMin: minute)
+		} else {
+			NotifyUserManager.shared.notifyUser()
+		}
         addKeyboardButtons()
         registerNotifToShowTextAboveKeyboard()
     }
@@ -59,14 +61,14 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, Tim
         navigationItem.backBarButtonItem?.tintColor = customTintColor
         navigationItem.setHidesBackButton(true, animated: false)
         
-        dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
-        dateLabel.textColor = customTintColor
-        dateLabel.textAlignment = .center
-        dateLabel.font = customFont
+//        dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
+//        dateLabel.textColor = customTintColor
+//        dateLabel.textAlignment = .center
+//        dateLabel.font = customFont
         //navigationItem.titleView = dateLabel
     }
   
-    func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
+    //func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
     
     func addKeyboardButtons() {
         let toolBar = UIToolbar()
@@ -163,7 +165,8 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate, Tim
         thankView?.removeSubviewWithTransform(duration: 0.4)
         showThankViewButton.isEnabled = true
     }
-    
+	
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent}
 }
+

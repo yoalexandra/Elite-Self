@@ -10,17 +10,18 @@ import UIKit
 let customTintColor = UIColor.deepRed1 //UIColor.init(hexValue: "#01739a", alpha: 1.0)  // old #204764
 let backButtonTitle = NSLocalizedString("Back", comment: "")
 let customFont = UIFont(name: "Lobster", size: 34.0)
+let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
 
 class MainCoordinator: Coordinator {
     
     var presenter: PresenterViewController
-    
+	var newDate: Date?
     let settingsVCTitle = NSLocalizedString("Settings", comment: "")
-    let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
     let cardsVCTitle = NSLocalizedString("Say more good words", comment: "")
     
-    init(presenter: PresenterViewController) {
+	init(presenter: PresenterViewController) {
         self.presenter = presenter
+		
         presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
         presenter.navigationBar.shadowImage = UIImage()
         presenter.navigationBar.backgroundColor = .clear
@@ -52,7 +53,9 @@ class MainCoordinator: Coordinator {
     }
     func settingsVCSubscription() {
         let settingsViewController = SettingsTableViewController.instantiate()
+		settingsViewController.delegate = self as? SettingsTableViewControllerDelegate
         settingsViewController.coordinator = self
+		
         settingsViewController.title = settingsVCTitle
         presenter.pushViewController(settingsViewController, animated: true)
     }
@@ -62,6 +65,15 @@ class MainCoordinator: Coordinator {
         ppViewController.title = pPolicyVCTitle
         presenter.pushViewController(ppViewController , animated: true)
     }
+}
+
+extension SettingsTableViewController: SettingsTableViewControllerDelegate {
+	
+	func newDateIsSelected(newDate: Date, isSelected: Bool) {
+		let vc = ViewController()
+		
+		
+	}
 }
 
 /*

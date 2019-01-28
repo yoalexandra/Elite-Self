@@ -24,11 +24,15 @@
 "Save" = "Сохранить";
 // SettingsTableViewController:
 "Settings" = "Настройки";
+"Manage notifications" = "Управление временем уведомлений";
+"Privacy policy and support" = "Политика конфиденциальности и поддержка";
+"Schedule notifications, select start time to get your positive words. Elite Self will send it every day 3 times form selected time plus 4 and  8 hours. P.S. You can turn it On/Off in System Settings" = "Управление временем уведомлений, выберите время первого уведомления. Elite Self будет отправлять их 3 раза в день из выбранного времени плюс 4 и 8 часов. P.S. Вы можете включить / выключить уведомления в настройках системы";
+"Select time" = "Выбрать время";
 // PrivacyViewController:
-"Privacy Policy" = "Privacy Policy";
+"Privacy Policy" = "Поддержка";
 // UserNotification:
-"This words are powerful" = "Слова - сила";
-"Some of them better to be repeated" = "Некоторые лучше повторять :)";
+"Words are powerful" = "Слова - сила";
+"Some of it repeat" = "Думайте позитивно ✨";
 // Affirmations
 "It's a beautiful day" = "Сегодня перкрасный день";
 "THANK YOU! Thank whatever that's happening for helping me to evolve" = "СПАСИБО! Спасибо всему что происходит в моей жизни и помогает мне расти";
@@ -48,7 +52,7 @@
 "I am a Creator of my Life" = "Я творец моей жизни";
 "Make today the best in your Life. Meet it with positive, success and fun!" = "Проживи лучший день сегодня. Встреть его с позитивомб успехом и радостью";
 "Vision. Purpose. Faith. Gratitude. Action." = "Видение. Цель. Вера. Благодарность. Действия";
-"I am Divine Design" = "Я божественный дизайн";
+"I am Divine Design" = "Жизнь хороша!";
 "Dominate your thoughts. Consciously change your focus to your goals and vision of Life" = "Управляй своими мыслями. Сознательно меняй фокус на цели и видение своей жизни";
 "All is well" = "все хорошо";
 "I'm ready to receive a miracle this week" = "Чудеса случаются каждый день в моей жизни";
