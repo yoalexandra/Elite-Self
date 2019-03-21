@@ -301,16 +301,28 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-oH-kig" userLabel="Container View">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIs-ws-WHE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
-                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vx-UH-hFi" customClass="ShadowedView" customModule="Elite_Self" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="30" width="120" height="140"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIs-ws-WHE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="UIs-ws-WHE" secondAttribute="trailing" id="8iF-hD-mKW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UIs-ws-WHE" secondAttribute="bottom" id="9ce-Lh-qQN"/>
+                                                        <constraint firstItem="UIs-ws-WHE" firstAttribute="top" secondItem="8Vx-UH-hFi" secondAttribute="top" id="MX5-Yz-WBI"/>
+                                                        <constraint firstItem="UIs-ws-WHE" firstAttribute="leading" secondItem="8Vx-UH-hFi" secondAttribute="leading" id="Qs3-Qm-nTU"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="UIs-ws-WHE" firstAttribute="top" secondItem="EJm-oH-kig" secondAttribute="top" id="ZS5-pn-UHi"/>
-                                                <constraint firstAttribute="bottom" secondItem="UIs-ws-WHE" secondAttribute="bottom" id="gmX-5v-FMr"/>
-                                                <constraint firstItem="UIs-ws-WHE" firstAttribute="leading" secondItem="EJm-oH-kig" secondAttribute="leading" id="jiZ-Nn-DQR"/>
-                                                <constraint firstAttribute="trailing" secondItem="UIs-ws-WHE" secondAttribute="trailing" id="u3l-sh-0N2"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Vx-UH-hFi" secondAttribute="bottom" constant="30" id="JG2-9N-1AM"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Vx-UH-hFi" secondAttribute="trailing" constant="30" id="QS0-U5-a1Z"/>
+                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="top" secondItem="EJm-oH-kig" secondAttribute="top" constant="30" id="WtX-qz-LF9"/>
+                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="leading" secondItem="EJm-oH-kig" secondAttribute="leading" constant="30" id="u7Z-kT-N6H"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -324,6 +336,7 @@
                                 <size key="customSize" width="180" height="200"/>
                                 <connections>
                                     <outlet property="containerView" destination="EJm-oH-kig" id="rEb-UT-WXz"/>
+                                    <outlet property="imageContainerView" destination="8Vx-UH-hFi" id="pck-me-JZv"/>
                                     <outlet property="photoView" destination="UIs-ws-WHE" id="gvG-z0-byF"/>
                                 </connections>
                             </collectionViewCell>

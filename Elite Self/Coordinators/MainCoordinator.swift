@@ -70,7 +70,7 @@ class MainCoordinator: Coordinator {
 extension SettingsTableViewController: SettingsTableViewControllerDelegate {
 	
 	func newDateIsSelected(newDate: Date, isSelected: Bool) {
-		let vc = ViewController()
+		//let vc = ViewController()
 		
 		
 	}
