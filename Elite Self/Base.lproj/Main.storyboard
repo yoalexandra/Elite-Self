@@ -18,9 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_screen_button_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HlI-Kr-j4O">
+                                <rect key="frame" x="157" y="318" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="kVm-0P-Uxm"/>
+                                    <constraint firstAttribute="height" constant="100" id="tv7-Ey-2qr"/>
+                                </constraints>
+                            </imageView>
                             <textView multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="KFH-ZO-EEO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes"/>
                             </textView>
@@ -61,7 +68,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.88232642412185669" green="0.79503703117370605" blue="0.80342620611190796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -71,7 +78,9 @@
                             <constraint firstItem="KFH-ZO-EEO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="R7b-Hh-kNP"/>
                             <constraint firstItem="KFH-ZO-EEO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RJD-kJ-dkh"/>
                             <constraint firstItem="dfC-ha-J67" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lUY-p8-UTo"/>
+                            <constraint firstItem="HlI-Kr-j4O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sBq-k1-51l"/>
                             <constraint firstItem="KFH-ZO-EEO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xNE-Cw-gii"/>
+                            <constraint firstItem="HlI-Kr-j4O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xiH-y2-kUB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -353,4 +362,7 @@
             <point key="canvasLocation" x="233" y="586"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_screen_button_icon" width="64" height="64"/>
+    </resources>
 </document>

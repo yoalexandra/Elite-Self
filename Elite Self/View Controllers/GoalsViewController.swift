@@ -24,7 +24,6 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         super.viewDidLoad()
         self.goalsTextView.delegate = self
         addNavigatonBarButtons()
-        setupNavigationBar()
         doneKeyboardButton()
         registerNotifToShowTextAboveKeyboard()
         loadSKScene()
@@ -35,12 +34,10 @@ class GoalsViewController: UIViewController, StoryboardedVCs, UITextViewDelegate
         loadTextFromUserDefaults()
     }
     // MARK: - Navigation Bar
-    func setupNavigationBar() {
-        navigationItem.title = largeTitleText
-    }
     func addNavigatonBarButtons() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissGVC))
-        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+		navigationItem.title = largeTitleText
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissGVC))
+		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
         navigationItem.setHidesBackButton(true, animated: false)
     }
     // Dismiss vc and show main screen

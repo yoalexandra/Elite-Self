@@ -26,7 +26,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBarLargeTitle()
+		
         addNavigatonBarButtons()
         setupCollectionViewVC()
         addLongPressGestureRecognizer()
@@ -38,14 +38,13 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
-    func setNavigationBarLargeTitle() {
-        navigationItem.title = largeTitleText
-    }
     func addNavigatonBarButtons() {
+		navigationItem.title = largeTitleText
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPhoto))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissVB))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissVB))
         navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.leftBarButtonItem?.tintColor = customTintColor
+		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
+        //navigationItem.leftBarButtonItem?.tintColor = customTintColor
         navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func addNewPhoto() {
@@ -119,10 +118,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // Local variable inserted by Swift 4.2 migrator.
-        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-        
-        guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage else { return }
+		guard let image = info[.editedImage] as? UIImage else { return }
         let photo = PhotoLibrary(image: image)
         photoLibrary.append(photo!)
         self.collectionView?.reloadData()
@@ -163,12 +159,3 @@ extension VisualBoardViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
-}

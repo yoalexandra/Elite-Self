@@ -8,7 +8,6 @@
 import UIKit
 
 let customTintColor = UIColor.deepRed1 //UIColor.init(hexValue: "#01739a", alpha: 1.0)  // old #204764
-let backButtonTitle = NSLocalizedString("Back", comment: "")
 let customFont = UIFont(name: "Lobster", size: 34.0)
 let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
 

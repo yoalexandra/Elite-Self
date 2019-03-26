@@ -50,10 +50,10 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)
         navigationItem.leftBarButtonItem = editButtonItem
-        let doneButton = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissEWVC))
-        navigationItem.rightBarButtonItems = [doneButton]//, editButton]
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissEWVC))
+		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
         navigationItem.leftBarButtonItem?.tintColor = customTintColor
-        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+	
     }
     // Return to main screen
     @objc func dismissEWVC() {
