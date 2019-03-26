@@ -34,8 +34,9 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
     // MARK: - Navigation Bar
     func addNavigatonBarButtons() {
         navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .done, target: self, action: #selector(dismissSVC))
-        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissSVC))
+		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
+        //navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func dismissSVC() {
         coordinator?.presenter.popToRootViewController(animated: true)

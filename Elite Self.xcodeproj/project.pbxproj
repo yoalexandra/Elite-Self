@@ -31,8 +31,10 @@
 		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
 		FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */; };
 		FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */; };
+		FA20C9E52205B51E0092B7CC /* CDNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20C9E42205B51E0092B7CC /* CDNotification.swift */; };
 		FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */; };
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
+		FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48138F2244381C005A0C2A /* ShadowedView.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
 		FA76641421A3B63300F79868 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA76641321A3B63200F79868 /* Lobster.ttf */; };
@@ -73,8 +75,10 @@
 		FA194EC321FC62250004064D /* Affirmations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Affirmations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerDelegate.swift; sourceTree = "<group>"; };
 		FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FA20C9E42205B51E0092B7CC /* CDNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNotification.swift; sourceTree = "<group>"; };
 		FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
+		FA48138F2244381C005A0C2A /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
@@ -104,7 +108,7 @@
 		C3C9D26420A5AA6600B08031 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F8AA521EB8A700050A66D /* DataModel */,
+				FA1F8AA521EB8A700050A66D /* CoreDataStack */,
 				C37FDCCB20A0F1A400460325 /* PhotoLibrary.swift */,
 				C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */,
 			);
@@ -118,6 +122,7 @@
 				FAE6CD002185A337003A8127 /* CollectionViewCells */,
 				FA54439A21387E8F00EC938E /* ThankView.swift */,
 				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
+				FA48138F2244381C005A0C2A /* ShadowedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,14 +219,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		FA1F8AA521EB8A700050A66D /* DataModel */ = {
+		FA1F8AA521EB8A700050A66D /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
 				FA194EC221FC62250004064D /* Affirmations+CoreDataClass.swift */,
 				FA194EC321FC62250004064D /* Affirmations+CoreDataProperties.swift */,
 				FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */,
+				FA20C9E42205B51E0092B7CC /* CDNotification.swift */,
 			);
-			path = DataModel;
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
 		FA93EA8F2194BC710077DC05 /* Transition */ = {
@@ -346,6 +352,7 @@
 				FA11150521625BF800317111 /* Coordinator.swift in Sources */,
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
+				FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */,
 				FA016F1521DCEBBF00B76F43 /* Elite_Self.xcdatamodeld in Sources */,
 				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
 				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 				FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */,
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
+				FA20C9E52205B51E0092B7CC /* CDNotification.swift in Sources */,
 				FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
 				FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */,
