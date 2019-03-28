@@ -25,15 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        CoreDataStack.sharedInstance.applicationDocumentsDirectory()
-        
         NotifyUserManager.shared.allowUserNotifications()
 		NotifyUserManager.shared.delegate()
 	
         return true
     }
     func applicationWillTerminate(_ application: UIApplication) {
-       CoreDataStack.sharedInstance.saveContext()
+		
     }
    
 }
