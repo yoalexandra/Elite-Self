@@ -12,8 +12,6 @@ import UserNotifications
 class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     
     weak var coordinator: MainCoordinator?
-	var delegate: TimePickerDelegate?
-	var isTimeSelected = false
     // MARK: - Outlets prorerties
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var thankView: ThankView!
@@ -34,18 +32,9 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         setupNavigationBar()
         //displayTodayDate() ok now is only matter
         NotifyUserManager.shared.delegate()
-		
-		 if isTimeSelected  {
-			var components = Calendar.current.dateComponents([.hour, .minute], from: (delegate?.newDate)!)
-			let hour = Int(components.hour!)
-			let minute = Int(components.minute!)
-			print(hour)
 
-			print(minute)
-			NotifyUserManager.shared.notifyByUserUserTime(customHour: hour, customMin: minute)
-		} else {
-			NotifyUserManager.shared.notifyUser()
-		}
+		NotifyUserManager.shared.notifyUser()
+		
         addKeyboardButtons()
         registerNotifToShowTextAboveKeyboard()
     }

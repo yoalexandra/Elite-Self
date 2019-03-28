@@ -44,8 +44,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissVB))
         navigationItem.setHidesBackButton(true, animated: false)
 		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
-        //navigationItem.leftBarButtonItem?.tintColor = customTintColor
-        navigationItem.rightBarButtonItem?.tintColor = customTintColor
+        navigationItem.leftBarButtonItem?.tintColor = customTintColor
     }
     @objc func addNewPhoto() {
         let picker = UIImagePickerController()
@@ -138,8 +137,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     }
     // Load Photos //TODO:  add do-catch block!
     private func loadPhotoCollection() -> [PhotoLibrary]? {
-       return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
-       
+      return NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? [PhotoLibrary]
     }
     // Load any saved photos
     func savedCollectionPhoto() {

@@ -23,7 +23,8 @@ class MainCoordinator: Coordinator {
 		
         presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
         presenter.navigationBar.shadowImage = UIImage()
-        presenter.navigationBar.backgroundColor = .clear
+		
+        //presenter.navigationBar.backgroundColor = .black
         presenter.navigationBar.prefersLargeTitles = true
         presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  customTintColor, NSAttributedString.Key.font: UIFont(name: "Lobster", size: UIFont.labelFontSize)!]
         presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor, NSAttributedString.Key.font: customFont!]
@@ -52,7 +53,7 @@ class MainCoordinator: Coordinator {
     }
     func settingsVCSubscription() {
         let settingsViewController = SettingsTableViewController.instantiate()
-		settingsViewController.delegate = self as? SettingsTableViewControllerDelegate
+
         settingsViewController.coordinator = self
 		
         settingsViewController.title = settingsVCTitle
@@ -66,14 +67,6 @@ class MainCoordinator: Coordinator {
     }
 }
 
-extension SettingsTableViewController: SettingsTableViewControllerDelegate {
-	
-	func newDateIsSelected(newDate: Date, isSelected: Bool) {
-		//let vc = ViewController()
-		
-		
-	}
-}
 
 /*
  
