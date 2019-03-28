@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import CoreData
 //TODO: Global refactoring , check if you can make some methods reusable!
 //TODO: save userPhrases with CoreData  // CustomAffirmations - entity phrase
 class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs {
-    // Property to switch on if user setup custom affirmation
-    var isUserPhraseSetup = false
+	
     // Routing
     weak var coordinator: MainCoordinator?
     // Cards items // tmp data
@@ -35,7 +33,6 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
         super.viewDidLoad()
         setupCollectionViewVC()
         addNavigatonBarButtons()
-        //convertToJSONArray(moArray: [Affirmations])
     }
     // CollectionCell sizing
     func setupCollectionViewVC() {
@@ -94,20 +91,6 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
             }
         }
     }
-	func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
-		var jsonArray: [[String: Any]] = []
-		for item in moArray {
-			var dict: [String: Any] = [:]
-			for attribute in item.entity.attributesByName {
-				//check if value is present, then add key to dictionary so as to avoid the nil value crash
-				if let value = item.value(forKey: attribute.key) {
-					dict[attribute.key] = value
-				}
-			}
-			jsonArray.append(dict)
-		}
-		return jsonArray
-	}
 }
 
 
