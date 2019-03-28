@@ -8,21 +8,16 @@
 
 import UIKit
 
-protocol SettingsTableViewControllerDelegate: class {
-	func newDateIsSelected(newDate: Date, isSelected: Bool)
-}
-
 class SettingsTableViewController: UITableViewController, StoryboardedVCs {
     
     weak var coordinator: MainCoordinator?
-	// Properties to send data to root ViewController
-	weak var delegate: SettingsTableViewControllerDelegate?
 	
     var expandedRows = Set<Int>()
 	let titleForHeaderInSection1 = NSLocalizedString("Manage notifications", comment: "")
 	let titleForFooterInSection0 = NSLocalizedString("Privacy policy and support", comment: "")
 	let titleForFooterInSection1 = NSLocalizedString("Schedule notifications, select start time to get your positive words. Elite Self will send it every day 3 times form selected time plus 4 and  8 hours. P.S. You can turn it On/Off in System Settings", comment: "")
 	let selectTimeCellTitle = NSLocalizedString("Select time", comment: "")
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -36,7 +31,6 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
         navigationItem.setHidesBackButton(true, animated: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissSVC))
 		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
-        //navigationItem.rightBarButtonItem?.tintColor = customTintColor
     }
     @objc func dismissSVC() {
         coordinator?.presenter.popToRootViewController(animated: true)
@@ -77,10 +71,6 @@ class SettingsTableViewController: UITableViewController, StoryboardedVCs {
             else { return }
         switch cell.isExpanded {
         case true:
-			
-			let date = cell.timePicker.date
-			delegate?.newDateIsSelected(newDate: date, isSelected: true)
-			
             self.expandedRows.remove(indexPath.row)
         case false:
             self.expandedRows.insert(indexPath.row)

@@ -29,7 +29,6 @@
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
 		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
-		FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */; };
 		FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */; };
 		FA20C9E52205B51E0092B7CC /* CDNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20C9E42205B51E0092B7CC /* CDNotification.swift */; };
 		FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */; };
@@ -73,7 +72,6 @@
 		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
 		FA194EC221FC62250004064D /* Affirmations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Affirmations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA194EC321FC62250004064D /* Affirmations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Affirmations+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerDelegate.swift; sourceTree = "<group>"; };
 		FA1F8AA621EB8AA20050A66D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FA20C9E42205B51E0092B7CC /* CDNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNotification.swift; sourceTree = "<group>"; };
 		FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				FA11150421625BF800317111 /* Coordinator.swift */,
-				FA194EC721FC6AE70004064D /* TimePickerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -297,7 +294,7 @@
 				TargetAttributes = {
 					C3D50C892030A46500EA1056 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -366,7 +363,6 @@
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				FA20C9E52205B51E0092B7CC /* CDNotification.swift in Sources */,
-				FA194EC821FC6AE70004064D /* TimePickerDelegate.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
 				FA1F8AA721EB8AA20050A66D /* CoreDataStack.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
@@ -542,7 +538,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -558,7 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
