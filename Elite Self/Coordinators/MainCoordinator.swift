@@ -40,31 +40,14 @@ class MainCoordinator: Coordinator {
         visualBoardViewController.coordinator = self
         presenter.pushViewController(visualBoardViewController, animated: true)
     }
-    func goasVClSubscription() {
-        let goalsViewController = GoalsViewController.instantiate()
-        goalsViewController.coordinator = self
-        presenter.pushViewController(goalsViewController, animated: true)
-    }
+
     func cardsVCSubscription() {
         let cardsViewController = CardsCollectionViewController.instantiate()
         cardsViewController.coordinator = self
         cardsViewController.title = cardsVCTitle
         presenter.pushViewController(cardsViewController, animated: true)
     }
-    func settingsVCSubscription() {
-        let settingsViewController = SettingsTableViewController.instantiate()
 
-        settingsViewController.coordinator = self
-		
-        settingsViewController.title = settingsVCTitle
-        presenter.pushViewController(settingsViewController, animated: true)
-    }
-    func ppVCSubscription() {
-        let ppViewController = PrivacyViewController.instantiate()
-        ppViewController.coordinator = self
-        ppViewController.title = pPolicyVCTitle
-        presenter.pushViewController(ppViewController , animated: true)
-    }
 }
 
 

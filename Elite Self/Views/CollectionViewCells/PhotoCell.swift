@@ -15,6 +15,8 @@ class PhotoCell: UICollectionViewCell {
 	@IBOutlet weak var imageContainerView: ShadowedView!
 	@IBOutlet weak var photoView: UIImageView!
 	
+	
+	
 	let cornerRadius : CGFloat = 6.0
     
     override func awakeFromNib() {

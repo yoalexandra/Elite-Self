@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 import UserNotifications
 
 class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
@@ -16,6 +17,8 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var thankView: ThankView!
     @IBOutlet weak var showThankViewButton: UIBarButtonItem!
+    
+    @IBOutlet weak var toolbar: UIToolbar!
     // Properties to save text with UserDefaults
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
@@ -24,17 +27,18 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
 	
-    // MARK: - viewDidLoad method in case you lost lol
+    // MARK: - viewDidLoad method in case you lost lol I know you will be
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.notesTextView.delegate = self
         setupNavigationBar()
         //displayTodayDate() ok now is only matter
+		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
         NotifyUserManager.shared.delegate()
-
 		NotifyUserManager.shared.notifyUser()
-		
+		loadSKScene()
         addKeyboardButtons()
         registerNotifToShowTextAboveKeyboard()
     }
@@ -120,6 +124,14 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
             thankView.addDoneKeyboardButton()
         }
     }
+	
+	func loadSKScene() {
+		let emitterScene = StarsScene()
+		let skView = self.view as! SKView
+		skView.ignoresSiblingOrder = true
+		emitterScene.size = view.bounds.size
+		skView.presentScene(emitterScene)
+	}
     
     // MARK: - @IBActions
     // ViewControllers navigation
@@ -128,23 +140,13 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         thankView?.removeSubview()
         showThankViewButton.isEnabled = true
     }
-    @IBAction func presentGoalsVC(_ sender: UIBarButtonItem) {
-        coordinator?.goasVClSubscription()
-        thankView?.removeSubview()
-        showThankViewButton.isEnabled = true
-    }
-    
+	
     @IBAction func presentCardsVC(_ sender: UIBarButtonItem) {
         coordinator?.cardsVCSubscription()
         thankView?.removeSubview()
         showThankViewButton.isEnabled = true
     }
     
-    @IBAction func presentSettingsVC(_ sender: UIBarButtonItem) {
-        coordinator?.settingsVCSubscription()
-        thankView?.removeSubview()
-        showThankViewButton.isEnabled = true
-    }
     // ThankView events
     @IBAction func showThnxView(_ sender: UIBarButtonItem) {
         awakeThankViewFromNib()

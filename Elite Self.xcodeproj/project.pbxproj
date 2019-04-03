@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AAFE12049F27000912D57 /* GoalsViewController.swift */; };
 		C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DF08220B263FB007E640F /* NotifyUserManager.swift */; };
 		C3319A0D20DDBCB1001A9F28 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */; };
 		C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37143322082753200F5CD96 /* VisualBoardViewController.swift */; };
@@ -28,7 +27,6 @@
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
 		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
-		FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */; };
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48138F2244381C005A0C2A /* ShadowedView.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
@@ -38,12 +36,10 @@
 		FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA96219570740077DC05 /* PresenterViewController.swift */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
 		FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = FAE6CCEA2185990C003A8127 /* privacy_policy.html */; };
-		FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */; };
 		FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C31AAFE12049F27000912D57 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		C31DF08220B263FB007E640F /* NotifyUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyUserManager.swift; sourceTree = "<group>"; };
 		C3319A0C20DDBCB1001A9F28 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C37143322082753200F5CD96 /* VisualBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBoardViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +62,6 @@
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
-		FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		FA48138F2244381C005A0C2A /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -80,7 +75,6 @@
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
 		FA95D3252144316200003F2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThankView.strings; sourceTree = "<group>"; };
 		FAE6CCEA2185990C003A8127 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
-		FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,10 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				C3D50CA22030A53C00EA1056 /* ViewController.swift */,
-				C31AAFE12049F27000912D57 /* GoalsViewController.swift */,
 				C37143322082753200F5CD96 /* VisualBoardViewController.swift */,
 				FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */,
-				FAE6CCED21859971003A8127 /* Settings */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -223,15 +215,6 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
-		FAE6CCED21859971003A8127 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				FA3816AB2162A788003CCE3B /* SettingsTableViewController.swift */,
-				FAE6CCEE218599D6003A8127 /* PrivacyViewController.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		FAE6CD002185A337003A8127 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,14 +312,11 @@
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */,
-				C31AAFE22049F27000912D57 /* GoalsViewController.swift in Sources */,
-				FA3816AC2162A788003CCE3B /* SettingsTableViewController.swift in Sources */,
 				FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */,
 				C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */,
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
-				FAE6CCEF218599D6003A8127 /* PrivacyViewController.swift in Sources */,
 				FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */,
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
@@ -510,7 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QL8JDRMYQ;
 				INFOPLIST_FILE = "Elite Self/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QL8JDRMYQ;
 				INFOPLIST_FILE = "Elite Self/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.divineapp.Elite-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
