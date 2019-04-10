@@ -161,10 +161,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vx-UH-hFi" customClass="ShadowedView" customModule="Elite_Self" customModuleProvider="target">
-                                                    <rect key="frame" x="30" y="30" width="120" height="140"/>
+                                                    <rect key="frame" x="10" y="10" width="160" height="180"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIs-ws-WHE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="180"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,14 +178,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="8Vx-UH-hFi" secondAttribute="bottom" constant="30" id="JG2-9N-1AM"/>
-                                                <constraint firstAttribute="trailing" secondItem="8Vx-UH-hFi" secondAttribute="trailing" constant="30" id="QS0-U5-a1Z"/>
-                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="top" secondItem="EJm-oH-kig" secondAttribute="top" constant="30" id="WtX-qz-LF9"/>
-                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="leading" secondItem="EJm-oH-kig" secondAttribute="leading" constant="30" id="u7Z-kT-N6H"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Vx-UH-hFi" secondAttribute="bottom" constant="10" id="JG2-9N-1AM"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Vx-UH-hFi" secondAttribute="trailing" constant="10" id="QS0-U5-a1Z"/>
+                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="top" secondItem="EJm-oH-kig" secondAttribute="top" constant="10" id="WtX-qz-LF9"/>
+                                                <constraint firstItem="8Vx-UH-hFi" firstAttribute="leading" secondItem="EJm-oH-kig" secondAttribute="leading" constant="10" id="u7Z-kT-N6H"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="EJm-oH-kig" secondAttribute="trailing" id="iij-4n-bCx"/>
                                     <constraint firstItem="EJm-oH-kig" firstAttribute="top" secondItem="m6W-X9-s9S" secondAttribute="top" id="jnl-4W-MpP"/>

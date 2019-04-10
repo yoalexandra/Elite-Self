@@ -33,6 +33,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationWillTerminate(_ application: UIApplication) {
 		
     }
+	
+	private lazy var persistentContainer: NSPersistentContainer = {
+
+		let container = NSPersistentContainer(name: "Elite_Self")
+		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+			if let error = error as NSError? {
+				
+				fatalError("Unresolved error \(error), \(error.userInfo)")
+			}
+		})
+		return container
+	}()
    
 }
 

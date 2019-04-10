@@ -27,14 +27,14 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		
         addNavigatonBarButtons()
         setupCollectionViewVC()
         addLongPressGestureRecognizer()
         savedCollectionPhoto()
     }
     func setupCollectionViewVC() {
-         //collectionView?.backgroundColor = UIColor.init(hexValue: "#C6DAE4", alpha: 1.0)//UIColor(hue: 0.62, saturation: 0.5, brightness: 0.206, alpha: 1.0)
-        collectionView?.backgroundColor = UIColor.init(hexValue: "#E1CBCD", alpha: 1.0)
+        collectionView?.backgroundColor = UIColor.white
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     // MARK: - Navigation Bar
@@ -44,7 +44,7 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissVB))
         navigationItem.setHidesBackButton(true, animated: false)
 		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
-        navigationItem.leftBarButtonItem?.tintColor = customTintColor
+        navigationItem.leftBarButtonItem?.tintColor = .white
     }
     @objc func addNewPhoto() {
         let picker = UIImagePickerController()

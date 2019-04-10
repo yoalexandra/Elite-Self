@@ -104,6 +104,7 @@
 				FAE6CCEC21859960003A8127 /* TableViewCells */,
 				FAE6CD002185A337003A8127 /* CollectionViewCells */,
 				FA54439A21387E8F00EC938E /* ThankView.swift */,
+				FA95D3232144315C00003F2F /* ThankView.xib */,
 				C3EBDB9D20659C3000AF0328 /* StarsScene.swift */,
 				FA48138F2244381C005A0C2A /* ShadowedView.swift */,
 			);
@@ -164,7 +165,6 @@
 				FA1114FC21625AA400317111 /* Extensions */,
 				C3C9D26820A5AB3000B08031 /* Supporting Files */,
 				C3D50C912030A46600EA1056 /* Main.storyboard */,
-				FA95D3232144315C00003F2F /* ThankView.xib */,
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
 				FA54439E2138816200EC938E /* Localizable.strings */,

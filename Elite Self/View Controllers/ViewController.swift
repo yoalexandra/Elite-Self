@@ -23,7 +23,6 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
     let saveTextKey = "textViewContent"
     let defaults = UserDefaults.standard
   
-    //var dateLabel = UILabel()
     // MARK: - Localizable strings properties
     let largeTitleText = NSLocalizedString("Manifest your day", comment: "")
 	
@@ -32,11 +31,8 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         super.viewDidLoad()
         
         self.notesTextView.delegate = self
-        setupNavigationBar()
-        //displayTodayDate() ok now is only matter
-		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
-        NotifyUserManager.shared.delegate()
+        setupUI()
+		
 		NotifyUserManager.shared.notifyUser()
 		loadSKScene()
         addKeyboardButtons()
@@ -47,21 +43,16 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         loadTextFromUserDefaults()
     }
     // MARK: - Navigation bar
-    func setupNavigationBar() {
+    func setupUI() {
+		
         navigationItem.title = largeTitleText
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = customTintColor
         navigationItem.setHidesBackButton(true, animated: false)
-        
-//        dateLabel.frame = CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0)
-//        dateLabel.textColor = customTintColor
-//        dateLabel.textAlignment = .center
-//        dateLabel.font = customFont
-        //navigationItem.titleView = dateLabel
+		
+		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+
     }
-  
-    //func displayTodayDate() { formatDate(date, textLabel: dateLabel) }
     
     func addKeyboardButtons() {
         let toolBar = UIToolbar()

@@ -7,8 +7,8 @@
 //
 import UIKit
 
-let customTintColor = UIColor.deepRed1 //UIColor.init(hexValue: "#01739a", alpha: 1.0)  // old #204764
-let customFont = UIFont(name: "Lobster", size: 34.0)
+let customTintColor = UIColor.deepRed 
+let customFont = UIFont(name: "Lobster", size: 24.0)
 let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
 
 class MainCoordinator: Coordinator {
@@ -20,15 +20,9 @@ class MainCoordinator: Coordinator {
     
 	init(presenter: PresenterViewController) {
         self.presenter = presenter
-		
-        presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        presenter.navigationBar.shadowImage = UIImage()
-		
-        //presenter.navigationBar.backgroundColor = .black
-        presenter.navigationBar.prefersLargeTitles = true
-        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  customTintColor, NSAttributedString.Key.font: UIFont(name: "Lobster", size: UIFont.labelFontSize)!]
-        presenter.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: customTintColor, NSAttributedString.Key.font: customFont!]
-
+        presenter.navigationBar.setBackgroundImage(UIImage(named: "navbar_background_icon"), for: .default)
+        //presenter.navigationBar.shadowImage = UIImage()
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  UIColor.white, NSAttributedString.Key.font: customFont!]
     }
     func start() {
         let viewController = ViewController.instantiate()
@@ -40,7 +34,6 @@ class MainCoordinator: Coordinator {
         visualBoardViewController.coordinator = self
         presenter.pushViewController(visualBoardViewController, animated: true)
     }
-
     func cardsVCSubscription() {
         let cardsViewController = CardsCollectionViewController.instantiate()
         cardsViewController.coordinator = self
@@ -50,18 +43,3 @@ class MainCoordinator: Coordinator {
 
 }
 
-
-/*
- 
- colors :
- 
- #5900e2
- #5800dd
- ////////
- #051333  dark blue 0 too dark
- #01739a
- #062651 dark blue 1 lighter
- #0e345c nightblue lighter
- for star
- #471370 purple
- */
