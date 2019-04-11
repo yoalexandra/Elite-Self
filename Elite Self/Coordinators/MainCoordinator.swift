@@ -7,7 +7,7 @@
 //
 import UIKit
 
-let customTintColor = UIColor.deepRed 
+let customTintColor = UIColor.nightBlue
 let customFont = UIFont(name: "Lobster", size: 24.0)
 let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
 
@@ -20,9 +20,10 @@ class MainCoordinator: Coordinator {
     
 	init(presenter: PresenterViewController) {
         self.presenter = presenter
-        presenter.navigationBar.setBackgroundImage(UIImage(named: "navbar_background_icon"), for: .default)
-        //presenter.navigationBar.shadowImage = UIImage()
-        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  UIColor.white, NSAttributedString.Key.font: customFont!]
+	
+        presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        presenter.navigationBar.shadowImage = UIImage()
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  UIColor.nightBlue, NSAttributedString.Key.font: customFont!]
     }
     func start() {
         let viewController = ViewController.instantiate()

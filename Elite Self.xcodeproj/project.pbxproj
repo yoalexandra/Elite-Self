@@ -27,6 +27,8 @@
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
 		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
+		FA347081225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */; };
+		FA347091225F6833005ED9BC /* Elite_Self.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA34708F225F6833005ED9BC /* Elite_Self.xcdatamodeld */; };
 		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48138F2244381C005A0C2A /* ShadowedView.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
@@ -62,6 +64,8 @@
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
+		FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+saveContex.swift"; sourceTree = "<group>"; };
+		FA347090225F6833005ED9BC /* Elite_Self.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elite_Self.xcdatamodel; sourceTree = "<group>"; };
 		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		FA48138F2244381C005A0C2A /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				C3D50C992030A46600EA1056 /* LaunchScreen.storyboard */,
 				C3D50C9C2030A46600EA1056 /* Info.plist */,
 				FA54439E2138816200EC938E /* Localizable.strings */,
+				FA34708F225F6833005ED9BC /* Elite_Self.xcdatamodeld */,
 			);
 			path = "Elite Self";
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				FA1114FD21625AE800317111 /* UIColor+HexValue.swift */,
 				FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */,
 				FA11150121625B8500317111 /* Date+DateFormatter.swift */,
+				FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				FAE6CCFF2185A330003A8127 /* AffirmationViewCell.swift in Sources */,
 				C31DF08320B263FB007E640F /* NotifyUserManager.swift in Sources */,
 				FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */,
+				FA347091225F6833005ED9BC /* Elite_Self.xcdatamodeld in Sources */,
 				FA11150021625B2500317111 /* UIView+CustomAnimations.swift in Sources */,
 				C37143332082753200F5CD96 /* VisualBoardViewController.swift in Sources */,
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
@@ -325,6 +332,7 @@
 				FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */,
 				FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */,
 				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
+				FA347081225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +545,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA34708F225F6833005ED9BC /* Elite_Self.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA347090225F6833005ED9BC /* Elite_Self.xcdatamodel */,
+			);
+			currentVersion = FA347090225F6833005ED9BC /* Elite_Self.xcdatamodel */;
+			path = Elite_Self.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3D50C822030A46500EA1056 /* Project object */;
 }

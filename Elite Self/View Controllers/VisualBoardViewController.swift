@@ -44,7 +44,8 @@ class VisualBoardViewController: UICollectionViewController,StoryboardedVCs, UII
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissVB))
         navigationItem.setHidesBackButton(true, animated: false)
 		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
-        navigationItem.leftBarButtonItem?.tintColor = .white
+		navigationItem.rightBarButtonItem?.tintColor = UIColor.nightBlue
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.nightBlue
     }
     @objc func addNewPhoto() {
         let picker = UIImagePickerController()

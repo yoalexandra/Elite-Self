@@ -19,7 +19,7 @@ class StarsScene: SKScene {
     func setupScene() {
         self.scene?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.scene?.scaleMode = .aspectFill
-        self.scene?.backgroundColor = UIColor.deepRed
+        self.scene?.backgroundColor = UIColor.lightBlue
     }
     func addStars() {
         stars = SKEmitterNode(fileNamed: "StarsScene")!
