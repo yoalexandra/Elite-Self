@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 //TODO: Global refactoring , check if you can make some methods reusable!
 //TODO: save userPhrases with CoreData  // CustomAffirmations - entity phrase
 class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs {
 	
+	var managedObjectContext: NSManagedObjectContext?
     // Routing
     weak var coordinator: MainCoordinator?
     // Cards items // tmp data
@@ -36,7 +38,7 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
     }
     // CollectionCell sizing
     func setupCollectionViewVC() {
-        collectionView?.backgroundColor = UIColor.init(hexValue: "#E1CBCD", alpha: 1.0)
+        collectionView?.backgroundColor = .white//init(hexValue: "#E1CBCD", alpha: 1.0)
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout,
             let collectionView = collectionView {
             let width = collectionView.frame.width - 20
@@ -49,8 +51,8 @@ class CardsCollectionViewController: UICollectionViewController, StoryboardedVCs
         navigationItem.leftBarButtonItem = editButtonItem
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissEWVC))
 		navigationItem.rightBarButtonItem?.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
-        navigationItem.leftBarButtonItem?.tintColor = customTintColor
-	
+		navigationItem.rightBarButtonItem?.tintColor = .nightBlue
+		navigationItem.leftBarButtonItem?.tintColor = .nightBlue		
     }
     // Return to main screen
     @objc func dismissEWVC() {

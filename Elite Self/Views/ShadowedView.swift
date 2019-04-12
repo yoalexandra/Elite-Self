@@ -10,7 +10,7 @@ import UIKit
 
 class ShadowedView: UIView {
 
-	var presetCornerRadius : CGFloat = 25.0
+	var presetCornerRadius: CGFloat = 8.0
 	
 	/*
 	once the bounds of the drop shadow view (container view) is initialized,

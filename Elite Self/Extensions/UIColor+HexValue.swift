@@ -29,13 +29,10 @@ extension UIColor {
 }
 
 extension UIColor {
-    @nonobjc class var deepRed: UIColor {
-        return UIColor(red: 76.0 / 255.0, green: 29.0 / 255.0, blue: 33.0 / 255, alpha: 1.0)
+    @nonobjc class var nightBlue: UIColor {
+        return UIColor(red: 20.0 / 255.0, green: 40.0 / 255.0, blue: 75.0 / 255, alpha: 1.0)
     }
-    @nonobjc class var deepRed1: UIColor {
-        return UIColor(red: 116.0 / 255.0, green: 35.0 / 255.0, blue: 36.0 / 255, alpha: 1.0)
-    }
-    @nonobjc class var dirtyDarkRed: UIColor {
-        return UIColor(red: 29.0 / 255.0, green: 16.0 / 255.0, blue: 28.0 / 255, alpha: 1.0)
-    }
+	@nonobjc class var lightBlue: UIColor {
+		return UIColor(red: 145.0 / 255.0, green: 170.0 / 255.0, blue: 180.0 / 255, alpha: 1.0)
+	}
 }
