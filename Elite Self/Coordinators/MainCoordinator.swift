@@ -8,22 +8,17 @@
 import UIKit
 
 let customTintColor = UIColor.nightBlue
-let customFont = UIFont(name: "Lobster", size: 24.0)
-let pPolicyVCTitle = NSLocalizedString("Privacy Policy", comment: "")
 
 class MainCoordinator: Coordinator {
     
     var presenter: PresenterViewController
-	var newDate: Date?
-    let settingsVCTitle = NSLocalizedString("Settings", comment: "")
     let cardsVCTitle = NSLocalizedString("Say more good words", comment: "")
     
 	init(presenter: PresenterViewController) {
         self.presenter = presenter
-	
         presenter.navigationBar.setBackgroundImage(UIImage(), for: .default)
         presenter.navigationBar.shadowImage = UIImage()
-        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  UIColor.nightBlue, NSAttributedString.Key.font: customFont!]
+        presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:  UIColor.nightBlue, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0)]
     }
     func start() {
         let viewController = ViewController.instantiate()
@@ -36,11 +31,10 @@ class MainCoordinator: Coordinator {
         presenter.pushViewController(visualBoardViewController, animated: true)
     }
     func cardsVCSubscription() {
-        let cardsViewController = CardsCollectionViewController.instantiate()
-        cardsViewController.coordinator = self
-        cardsViewController.title = cardsVCTitle
-        presenter.pushViewController(cardsViewController, animated: true)
+        let vc = UserAffirmationsViewController.instantiate()
+        vc.coordinator = self
+        vc.title = cardsVCTitle
+        presenter.pushViewController(vc, animated: true)
     }
-
 }
 
