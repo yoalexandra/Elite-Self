@@ -26,7 +26,6 @@ class PhotoLibrary: NSObject, NSCoding {
         aCoder.encode(image, forKey: PropertyKey.image)
     }
     required convenience init?(coder aDecoder: NSCoder) {
-        
         let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage
         self.init(image: image)
     }

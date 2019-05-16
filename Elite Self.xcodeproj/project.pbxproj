@@ -26,14 +26,13 @@
 		FA11150521625BF800317111 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150421625BF800317111 /* Coordinator.swift */; };
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
+		FA125BB9228DA18B00B93FCA /* UserAffirmationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA125BB8228DA18B00B93FCA /* UserAffirmationsViewController.swift */; };
 		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
 		FA347081225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */; };
 		FA347091225F6833005ED9BC /* Elite_Self.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA34708F225F6833005ED9BC /* Elite_Self.xcdatamodeld */; };
-		FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */; };
 		FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48138F2244381C005A0C2A /* ShadowedView.swift */; };
 		FA54439B21387E8F00EC938E /* ThankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54439A21387E8F00EC938E /* ThankView.swift */; };
 		FA5443A02138816200EC938E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA54439E2138816200EC938E /* Localizable.strings */; };
-		FA76641421A3B63300F79868 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA76641321A3B63200F79868 /* Lobster.ttf */; };
 		FA93EA95219570560077DC05 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA94219570560077DC05 /* FadeAnimation.swift */; };
 		FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93EA96219570740077DC05 /* PresenterViewController.swift */; };
 		FA95D3212144315C00003F2F /* ThankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA95D3232144315C00003F2F /* ThankView.xib */; };
@@ -63,17 +62,16 @@
 		FA11150421625BF800317111 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FA125BB8228DA18B00B93FCA /* UserAffirmationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAffirmationsViewController.swift; sourceTree = "<group>"; };
 		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
 		FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+saveContex.swift"; sourceTree = "<group>"; };
 		FA347090225F6833005ED9BC /* Elite_Self.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elite_Self.xcdatamodel; sourceTree = "<group>"; };
-		FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		FA48138F2244381C005A0C2A /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
 		FA5443942138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA5443952138659500EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA54439A21387E8F00EC938E /* ThankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankView.swift; sourceTree = "<group>"; };
 		FA54439F2138816200EC938E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5443A12138816800EC938E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA76641321A3B63200F79868 /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
 		FA93EA94219570560077DC05 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
 		FA93EA96219570740077DC05 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		FA95D3222144315C00003F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ThankView.xib; sourceTree = "<group>"; };
@@ -120,7 +118,7 @@
 			children = (
 				C3D50CA22030A53C00EA1056 /* ViewController.swift */,
 				C37143322082753200F5CD96 /* VisualBoardViewController.swift */,
-				FA3816AD2162A82E003CCE3B /* CardsCollectionViewController.swift */,
+				FA125BB8228DA18B00B93FCA /* UserAffirmationsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -128,7 +126,6 @@
 		C3C9D26820A5AB3000B08031 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA76641321A3B63200F79868 /* Lobster.ttf */,
 				FAE6CCEA2185990C003A8127 /* privacy_policy.html */,
 				C3EBDB9B20659BE800AF0328 /* StarsScene.sks */,
 				C3D50C972030A46600EA1056 /* Assets.xcassets */,
@@ -159,7 +156,6 @@
 			children = (
 				C3D50C8D2030A46600EA1056 /* AppDelegate.swift */,
 				C31DF08220B263FB007E640F /* NotifyUserManager.swift */,
-				FA11150621625C6D00317111 /* StoryboardedVCs.swift */,
 				C3C9D26420A5AA6600B08031 /* Models */,
 				C3C9D26520A5AA7D00B08031 /* Views */,
 				C3C9D26620A5AA9A00B08031 /* View Controllers */,
@@ -180,6 +176,7 @@
 		FA1114FC21625AA400317111 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA11150621625C6D00317111 /* StoryboardedVCs.swift */,
 				FA1114FD21625AE800317111 /* UIColor+HexValue.swift */,
 				FA1114FF21625B2500317111 /* UIView+CustomAnimations.swift */,
 				FA11150121625B8500317111 /* Date+DateFormatter.swift */,
@@ -216,6 +213,7 @@
 		FAE6CCEC21859960003A8127 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */,
 				FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */,
 			);
 			path = TableViewCells;
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				C37FDCC720A0F0ED00460325 /* PhotoCell.swift */,
-				FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 			files = (
 				C3C5E0FA203290E00045B1D5 /* quotes.json in Resources */,
 				C3D50C9B2030A46600EA1056 /* LaunchScreen.storyboard in Resources */,
-				FA76641421A3B63300F79868 /* Lobster.ttf in Resources */,
 				C3EBDB9C20659BE800AF0328 /* StarsScene.sks in Resources */,
 				FAE6CCEB2185990C003A8127 /* privacy_policy.html in Resources */,
 				FA5443A02138816200EC938E /* Localizable.strings in Resources */,
@@ -326,11 +322,11 @@
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
 				FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */,
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
+				FA125BB9228DA18B00B93FCA /* UserAffirmationsViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
 				FA11150221625B8500317111 /* Date+DateFormatter.swift in Sources */,
 				C37FDCC820A0F0ED00460325 /* PhotoCell.swift in Sources */,
 				FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */,
-				FA3816AE2162A82E003CCE3B /* CardsCollectionViewController.swift in Sources */,
 				FA54439B21387E8F00EC938E /* ThankView.swift in Sources */,
 				FA347081225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift in Sources */,
 			);
