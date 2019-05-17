@@ -11,14 +11,28 @@ import UIKit
 class UserAffirmationsViewController: UIViewController, StoryboardedVCs {
 
 	@IBOutlet weak var tableView: UITableView!
+	let cellID = "userPhrase"
 	
 	weak var coordinator: MainCoordinator?
+	
 	let editButtonTitle = NSLocalizedString("Save", comment: "")
 	let appDelegate = UIApplication.shared.delegate as! AppDelegate
 	let textView = UITextView(frame: CGRect.zero)
+	// temp data
+	let sampleData = ["It's a beautiful day",
+					  "THANK YOU! Thank whatever that's happening for helping me to evolve",
+					  "The best is yet to come",
+					  "Amazing things are keeping to happen today",
+					  "Think beautiful thoughts",
+					  "Be the energy you want to attract",
+					  "My Life just keeps getting better!",
+					  "Breathe through all changes. You're exactly where you should be in your transformation",
+					  "Think positive"]
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.delegate = self
+		tableView.dataSource = self
 		
 		addNavigatonBarButtons()
 		
@@ -41,6 +55,23 @@ class UserAffirmationsViewController: UIViewController, StoryboardedVCs {
 
 }
 
+extension UserAffirmationsViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return sampleData.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? AffirmationViewCell else {
+			fatalError("The dequeued cell is not instance of PhotoCell")
+		}
+		let ds = sampleData[indexPath.row]
+		cell.affirmationViewText.text = ds
+		return cell
+	}
+	
+}
+
 private extension UserAffirmationsViewController {
 	// MARK: - Navigation Bar
 	func addNavigatonBarButtons() {
@@ -50,7 +81,6 @@ private extension UserAffirmationsViewController {
 		homeScreenButton.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
 		
 		let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(showAlert))
-		
 		
 		homeScreenButton.tintColor = .nightBlue
 		addButton.tintColor = .nightBlue

@@ -27,7 +27,6 @@
 		FA11150721625C6D00317111 /* StoryboardedVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150621625C6D00317111 /* StoryboardedVCs.swift */; };
 		FA11150921625CA400317111 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11150821625CA400317111 /* MainCoordinator.swift */; };
 		FA125BB9228DA18B00B93FCA /* UserAffirmationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA125BB8228DA18B00B93FCA /* UserAffirmationsViewController.swift */; };
-		FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */; };
 		FA347081225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */; };
 		FA347091225F6833005ED9BC /* Elite_Self.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA34708F225F6833005ED9BC /* Elite_Self.xcdatamodeld */; };
 		FA4813902244381C005A0C2A /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48138F2244381C005A0C2A /* ShadowedView.swift */; };
@@ -63,7 +62,6 @@
 		FA11150621625C6D00317111 /* StoryboardedVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedVCs.swift; sourceTree = "<group>"; };
 		FA11150821625CA400317111 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA125BB8228DA18B00B93FCA /* UserAffirmationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAffirmationsViewController.swift; sourceTree = "<group>"; };
-		FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewCell.swift; sourceTree = "<group>"; };
 		FA347080225F5DE6005ED9BC /* NSPersistentContainer+saveContex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+saveContex.swift"; sourceTree = "<group>"; };
 		FA347090225F6833005ED9BC /* Elite_Self.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elite_Self.xcdatamodel; sourceTree = "<group>"; };
 		FA48138F2244381C005A0C2A /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				FAE6CCFE2185A330003A8127 /* AffirmationViewCell.swift */,
-				FA194EBC21FC32C70004064D /* SelectTimeViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				C3D50C8E2030A46600EA1056 /* AppDelegate.swift in Sources */,
 				C37FDCCC20A0F1A400460325 /* PhotoLibrary.swift in Sources */,
 				FA1114FE21625AE800317111 /* UIColor+HexValue.swift in Sources */,
-				FA194EBD21FC32C70004064D /* SelectTimeViewCell.swift in Sources */,
 				FA93EA97219570740077DC05 /* PresenterViewController.swift in Sources */,
 				FA125BB9228DA18B00B93FCA /* UserAffirmationsViewController.swift in Sources */,
 				C3EBDB9E20659C3000AF0328 /* StarsScene.swift in Sources */,
