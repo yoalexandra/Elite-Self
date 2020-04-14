@@ -11,6 +11,7 @@ import UIKit
 class UserAffirmationsViewController: UIViewController, StoryboardedVCs {
 
 	@IBOutlet weak var tableView: UITableView!
+	
 	let cellID = "userPhrase"
 	
 	weak var coordinator: MainCoordinator?
@@ -31,8 +32,12 @@ class UserAffirmationsViewController: UIViewController, StoryboardedVCs {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.allowsSelection = false
+		
+		textView.delegate = self
 		
 		addNavigatonBarButtons()
 		
@@ -52,7 +57,10 @@ class UserAffirmationsViewController: UIViewController, StoryboardedVCs {
 			}
 		}
 	}
-
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+	}
 }
 
 extension UserAffirmationsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,6 +80,12 @@ extension UserAffirmationsViewController: UITableViewDelegate, UITableViewDataSo
 	
 }
 
+extension UserAffirmationsViewController: UITextViewDelegate {
+	func setupTextView() {
+		
+	}
+}
+
 private extension UserAffirmationsViewController {
 	// MARK: - Navigation Bar
 	func addNavigatonBarButtons() {
@@ -80,13 +94,13 @@ private extension UserAffirmationsViewController {
 		let homeScreenButton = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(dismissUAVC))
 		homeScreenButton.setBackgroundImage(UIImage(named: "home_screen_button_icon"), for: .normal, barMetrics: .default)
 		
-		let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(showAlert))
+		//let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(showAlert))
 		
 		homeScreenButton.tintColor = .nightBlue
-		addButton.tintColor = .nightBlue
+		//addButton.tintColor = .nightBlue
 		navigationItem.leftBarButtonItem?.tintColor = .nightBlue
 		
-		navigationItem.rightBarButtonItems = [homeScreenButton, addButton]
+		navigationItem.rightBarButtonItems = [homeScreenButton]
 	}
 	// Return to main screen
 	@objc func dismissUAVC() {
@@ -111,7 +125,7 @@ private extension UserAffirmationsViewController {
 		
 		alertController.addAction(cancelAction)
 		alertController.addAction(saveAction)
-		
+		textView.becomeFirstResponder()
 		present(alertController, animated: true, completion: nil)
 	}
 }

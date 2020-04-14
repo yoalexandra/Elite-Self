@@ -7,6 +7,7 @@
 //
 
 import CoreData
+//TODO: use CoreData instead FileManager
 extension NSPersistentContainer {
 	
 	func saveContextIfNeeded() {
