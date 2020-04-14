@@ -32,6 +32,43 @@ class VisualBoardViewController: UICollectionViewController, StoryboardedVCs {
         addLongPressGestureRecognizer()
         savedCollectionPhoto()
     }
+	
+	
+	// MARK: - FileManager saving & retrieve images
+	func savePhotoCollection() {
+		let url = URL(fileURLWithPath: PhotoLibrary.ArchiveURL.path)
+		print(url)
+		do {
+			let encodedData = try PropertyListEncoder().encode(photoLibrary)
+			let data  = try NSKeyedArchiver.archivedData(withRootObject: encodedData, requiringSecureCoding: false)
+			
+			try data.write(to: url, options: [.atomic])
+			os_log("Photo succseffully saved", log: OSLog.default, type: .debug)
+		} catch {
+			os_log("Failed to save photos", log: OSLog.default, type: .error)
+		}
+	}
+	// Load Photos
+	func loadPhotoCollection() -> [PhotoLibrary]? {
+		
+		let decoder = PropertyListDecoder()
+		
+		guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? Data else { return nil }
+		do {
+		  let photos = try decoder.decode([PhotoLibrary].self, from: data)
+		  return photos
+		} catch {
+		  print("Retrieve Failed")
+		  return nil
+		}
+		
+	}
+	// Load any saved photos
+	func savedCollectionPhoto() {
+		if let savePhoto = loadPhotoCollection() {
+			photoLibrary += savePhoto
+		}
+	}
  
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -149,39 +186,4 @@ private extension VisualBoardViewController {
 		present(confirmDeleting, animated: true, completion: nil)
 	}
 
-	// MARK: - FileManager saving & retrieve images
-	func savePhotoCollection() {
-		let url = URL(fileURLWithPath: PhotoLibrary.ArchiveURL.path)
-		print(url)
-		do {
-			let encodedData = try PropertyListEncoder().encode(photoLibrary)
-			let data  = try NSKeyedArchiver.archivedData(withRootObject: encodedData, requiringSecureCoding: false)
-			
-			try data.write(to: url, options: [.atomic])
-			os_log("Photo succseffully saved", log: OSLog.default, type: .debug)
-		} catch {
-			os_log("Failed to save photos", log: OSLog.default, type: .error)
-		}
-	}
-	// Load Photos //TODO:  add do-catch block!
-	func loadPhotoCollection() -> [PhotoLibrary]? {
-		
-		let decoder = PropertyListDecoder()
-		
-		guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: PhotoLibrary.ArchiveURL.path) as? Data else { return nil }
-		do {
-		  let photos = try decoder.decode([PhotoLibrary].self, from: data)
-		  return photos
-		} catch {
-		  print("Retrieve Failed")
-		  return nil
-		}
-		
-	}
-	// Load any saved photos
-	func savedCollectionPhoto() {
-		if let savePhoto = loadPhotoCollection() {
-			photoLibrary += savePhoto
-		}
-	}
 }
