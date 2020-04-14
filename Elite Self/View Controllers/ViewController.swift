@@ -42,36 +42,7 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
         super.viewWillAppear(animated)
         loadTextFromUserDefaults()
     }
-    // MARK: - Navigation bar
-    func setupUI() {
-		
-        navigationItem.title = largeTitleText
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.setHidesBackButton(true, animated: false)
-		
-		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
-
-    }
-    
-    func addKeyboardButtons() {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
-        trashButton.tintColor = customTintColor
-        doneButton.tintColor = customTintColor
-        toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
-        notesTextView.inputAccessoryView = toolBar
-    }
-    @objc func doneButtonClicked() {
-        view.endEditing(true)
-    }
-    @objc func clearTextView() {
-        defaults.removeObject(forKey: saveTextKey)
-        notesTextView.text = ""
-    }
+   
     func saveText() {
         defaults.set(notesTextView.text, forKey: saveTextKey)
     }
@@ -88,67 +59,103 @@ class ViewController: UIViewController, StoryboardedVCs, UITextViewDelegate {
             notesTextView.becomeFirstResponder()
         }
     }
-    // TextView editing mode, make display user text above keyboard
-    func registerNotifToShowTextAboveKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    @objc func textAboveKeyboard(notification: Notification) {
-        let userInfo = notification.userInfo
-        let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardFrame = self.view.convert(getKeyboardRect, to: view.window)
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            notesTextView.contentInset = UIEdgeInsets.zero
-        } else {
-            notesTextView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
-            notesTextView.scrollIndicatorInsets = notesTextView.contentInset
-        }
-        notesTextView.scrollRangeToVisible(notesTextView.selectedRange)
-    }
-    // Awake ThankView from nib
-    func awakeThankViewFromNib() {
-        let nib = UINib.init(nibName: "ThankView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
-        if let thankView = thankView {
-            thankView.center = view.center
-            view.addSubviewWithFadeAnimation(thankView, duration: 1.0, options: .curveEaseIn)
-            thankView.addDoneKeyboardButton()
-        }
-    }
-	
-	func loadSKScene() {
-		let emitterScene = StarsScene()
-		let skView = self.view as! SKView
-		skView.ignoresSiblingOrder = true
-		emitterScene.size = view.bounds.size
-		skView.presentScene(emitterScene)
-	}
     
-    // MARK: - @IBActions
-    // ViewControllers navigation
-    @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
-        coordinator?.visualBoardSubscription()
-        thankView?.removeSubview()
-        showThankViewButton.isEnabled = true
-    }
-	
-    @IBAction func presentCardsVC(_ sender: UIBarButtonItem) {
-        coordinator?.cardsVCSubscription()
-        thankView?.removeSubview()
-        showThankViewButton.isEnabled = true
-    }
-    
-    // ThankView events
-    @IBAction func showThnxView(_ sender: UIBarButtonItem) {
-        awakeThankViewFromNib()
-        showThankViewButton.isEnabled = false
-    }
-    @IBAction func sendThank(_ sender: UIButton) {
-        thankView?.removeSubviewWithTransform(duration: 0.4)
-        showThankViewButton.isEnabled = true
-    }
 	
     override var prefersStatusBarHidden: Bool { return false }
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent}
 }
 
+private extension ViewController {
+	
+	 func addThankViewFromNib() {
+		 let nib = UINib.init(nibName: "ThankView", bundle: nil)
+		 nib.instantiate(withOwner: self, options: nil)
+		 if let thankView = thankView {
+			 thankView.center = view.center
+			 view.addSubviewWithFadeAnimation(thankView, duration: 1.0, options: .curveEaseIn)
+			 thankView.addDoneKeyboardButton()
+		 }
+	 }
+	 
+	 func loadSKScene() {
+		 let emitterScene = StarsScene()
+		 let skView = self.view as! SKView
+		 skView.ignoresSiblingOrder = true
+		 emitterScene.size = view.bounds.size
+		 skView.presentScene(emitterScene)
+	 }
+	 
+	 // MARK: - @IBActions
+	 // ViewControllers navigation
+	 @IBAction func presentVisualBoardVC(_ sender: UIBarButtonItem) {
+		 coordinator?.visualBoardSubscription()
+		 thankView?.removeSubview()
+		 showThankViewButton.isEnabled = true
+	 }
+	 
+	 @IBAction func presentCardsVC(_ sender: UIBarButtonItem) {
+		 coordinator?.cardsVCSubscription()
+		 thankView?.removeSubview()
+		 showThankViewButton.isEnabled = true
+	 }
+	 
+	 // ThankView events
+	 @IBAction func showThnxView(_ sender: UIBarButtonItem) {
+		addThankViewFromNib()
+		 showThankViewButton.isEnabled = false
+	 }
+	 @IBAction func sendThank(_ sender: UIButton) {
+		 thankView?.removeSubviewWithTransform(duration: 0.4)
+		 showThankViewButton.isEnabled = true
+	 }
+	
+	// TextView editing mode, make display user text above keyboard
+	   func registerNotifToShowTextAboveKeyboard() {
+		   NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
+		   NotificationCenter.default.addObserver(self, selector: #selector(textAboveKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+	   }
+	   @objc func textAboveKeyboard(notification: Notification) {
+		   let userInfo = notification.userInfo
+		   let getKeyboardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+		   let keyboardFrame = self.view.convert(getKeyboardRect, to: view.window)
+		   if notification.name == UIResponder.keyboardWillHideNotification {
+			   notesTextView.contentInset = UIEdgeInsets.zero
+		   } else {
+			   notesTextView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+			   notesTextView.scrollIndicatorInsets = notesTextView.contentInset
+		   }
+		   notesTextView.scrollRangeToVisible(notesTextView.selectedRange)
+	   }
+	
+	// MARK: - Navigation bar
+	   func setupUI() {
+		   
+		   navigationItem.title = largeTitleText
+		   navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+		   navigationItem.setHidesBackButton(true, animated: false)
+		   
+		   toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+		   toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+
+	   }
+	   
+	   func addKeyboardButtons() {
+		   let toolBar = UIToolbar()
+		   toolBar.sizeToFit()
+		   let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(self.clearTextView))
+		   let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+		   let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneButtonClicked))
+		   trashButton.tintColor = customTintColor
+		   doneButton.tintColor = customTintColor
+		   toolBar.setItems([trashButton, flexibleSpace, doneButton], animated: false)
+		   notesTextView.inputAccessoryView = toolBar
+	   }
+	   @objc func doneButtonClicked() {
+		   view.endEditing(true)
+	   }
+	   @objc func clearTextView() {
+		   defaults.removeObject(forKey: saveTextKey)
+		   notesTextView.text = ""
+	   }
+	
+}
